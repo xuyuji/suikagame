@@ -1,0 +1,15 @@
+name = "suikagame"
+compatibility_date = "2023-12-01"
+
+[env.production]
+routes = [
+  { pattern = "*", zone_name = "your-domain.com" }
+]
+
+[build]
+command = ""
+cwd = ""
+watch_dir = ""
+
+[vars]
+ENVIRONMENT = "production" 

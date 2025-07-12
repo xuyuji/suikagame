@@ -1,0 +1,5 @@
+# 将所有未找到的页面重定向到主页
+/* /index.html 200
+
+# 如果有人访问旧的文件名，重定向到新的
+/suikagame.html /index.html 301 
