@@ -358,74 +358,25 @@
 </head>
 <body>
     <div class="language-selector">
-        <div class="language-dropdown">
-            <button class="language-btn">
-                <span class="flag-icon flag-ko"></span>
-                <span>한국어</span>
-                <span>▼</span>
-            </button>
-            <div class="language-dropdown-content">
-                <a href="/" class="language-option">
-                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSI2IiBmaWxsPSIjZmYwMDAwIi8+CjxyZWN0IHk9IjEyIiB3aWR0aD0iMjQiIGhlaWdodD0iNiIgZmlsbD0iI2ZmMDAwMCIvPgo8L3N2Zz4K')"></span>
-                    <span>English</span>
-                </a>
-                <a href="/zh.html" class="language-option">
-                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmYwMDAwIi8+CjxwYXRoIGQ9Ik0yIDJMMTAgMTBNMTAgMkwyIDEwIiBzdHJva2U9IiNmZmZmMDAiIHN0cm9rZS13aWR0aD0iMiIvPgo8L3N2Zz4K')"></span>
-                    <span>中文</span>
-                </a>
-                <a href="/es.html" class="language-option">
-                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSI2IiBmaWxsPSIjZmYwMDAwIi8+CjxyZWN0IHk9IjEyIiB3aWR0aD0iMjQiIGhlaWdodD0iNiIgZmlsbD0iI2ZmMDAwMCIvPgo8L3N2Zz4K')"></span>
-                    <span>Español</span>
-                </a>
-                <a href="/fr.html" class="language-option">
-                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjE4IiBmaWxsPSIjMDA2NmZmIi8+CjxyZWN0IHg9IjE2IiB3aWR0aD0iOCIgaGVpZ2h0PSIxOCIgZmlsbD0iI2ZmMDAwMCIvPgo8L3N2Zz4K')"></span>
-                    <span>Français</span>
-                </a>
-                <a href="/de.html" class="language-option">
-                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSI2IiBmaWxsPSIjMDAwIi8+CjxyZWN0IHk9IjEyIiB3aWR0aD0iMjQiIGhlaWdodD0iNiIgZmlsbD0iI2ZmMDAwMCIvPgo8L3N2Zz4K')"></span>
-                    <span>Deutsch</span>
-                </a>
-                <a href="/ar.html" class="language-option">
-                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSI2IiBmaWxsPSIjZmYwMDAwIi8+CjxyZWN0IHk9IjEyIiB3aWR0aD0iMjQiIGhlaWdodD0iNiIgZmlsbD0iIzAwMCIvPgo8L3N2Zz4K')"></span>
-                    <span>العربية</span>
-                </a>
-                <a href="/ja.html" class="language-option">
-                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iOSIgcj0iNCIgZmlsbD0iI2ZmMDAwMCIvPgo8L3N2Zz4K')"></span>
-                    <span>日本語</span>
-                </a>
-                <a href="/ru.html" class="language-option">
-                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSI2IiBmaWxsPSIjMDA2NmZmIi8+CjxyZWN0IHk9IjEyIiB3aWR0aD0iMjQiIGhlaWdodD0iNiIgZmlsbD0iI2ZmMDAwMCIvPgo8L3N2Zz4K')"></span>
-                    <span>Русский</span>
-                </a>
-                <a href="/pt.html" class="language-option">
-                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSI5IiBoZWlnaHQ9IjE4IiBmaWxsPSIjMDA2NjAwIi8+CjxyZWN0IHg9IjkiIHdpZHRoPSIxNSIgaGVpZ2h0PSIxOCIgZmlsbD0iI2ZmMDAwMCIvPgo8L3N2Zz4K')"></span>
-                    <span>Português</span>
-                </a>
-                <a href="/it.html" class="language-option">
-                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjE4IiBmaWxsPSIjMDA2NmZmIi8+CjxyZWN0IHg9IjE2IiB3aWR0aD0iOCIgaGVpZ2h0PSIxOCIgZmlsbD0iI2ZmMDAwMCIvPgo8L3N2Zz4K')"></span>
-                    <span>Italiano</span>
-                </a>
-                <a href="/ko.html" class="language-option current">
-                    <span class="flag-icon flag-ko"></span>
-                    <span>한국어</span>
-                </a>
-                <a href="/pl.html" class="language-option">
-                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHk9IjkiIHdpZHRoPSIyNCIgaGVpZ2h0PSI5IiBmaWxsPSIjZmYwMDAwIi8+CjwvdGV4dD4KPC9zdmc+')"></span>
-                    <span>Polski</span>
-                </a>
-                <a href="/sv.html" class="language-option">
-                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjMDA2NmZmIi8+CjxyZWN0IHg9IjgiIHdpZHRoPSI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmZjAwIi8+CjxyZWN0IHk9IjciIHdpZHRoPSIyNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmZjAwIi8+CjwvdGV4dD4KPC9zdmc+')"></span>
-                    <span>Svenska</span>
-                </a>
-                <a href="/fi.html" class="language-option">
-                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHg9IjgiIHdpZHRoPSI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjMDA2NmZmIi8+CjxyZWN0IHk9IjciIHdpZHRoPSIyNCIgaGVpZ2h0PSI0IiBmaWxsPSIjMDA2NmZmIi8+CjwvdGV4dD4KPC9zdmc+')"></span>
-                    <span>Suomi</span>
-                </a>
-                <a href="/no.html" class="language-option">
-                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmYwMDAwIi8+CjxyZWN0IHg9IjgiIHdpZHRoPSI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHk9IjciIHdpZHRoPSIyNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIi8+CjwvdGV4dD4KPC9zdmc+')"></span>
-                    <span>Norsk</span>
-                </a>
-            </div>
+        <button class="language-btn" onclick="toggleLanguageMenu()">
+            🌐 언어
+        </button>
+        <div class="language-menu" id="languageMenu">
+            <a href="index.html" class="lang-option">🇺🇸 English</a>
+            <a href="zh.html" class="lang-option">🇨🇳 中文</a>
+            <a href="es.html" class="lang-option">🇪🇸 Español</a>
+            <a href="fr.html" class="lang-option">🇫🇷 Français</a>
+            <a href="de.html" class="lang-option">🇩🇪 Deutsch</a>
+            <a href="ja.html" class="lang-option">🇯🇵 日本語</a>
+            <a href="ar.html" class="lang-option">🇸🇦 العربية</a>
+            <a href="ru.html" class="lang-option">🇷🇺 Русский</a>
+            <a href="pt.html" class="lang-option">🇵🇹 Português</a>
+            <a href="it.html" class="lang-option">🇮🇹 Italiano</a>
+            <a href="ko.html" class="lang-option">🇰🇷 한국어</a>
+            <a href="pl.html" class="lang-option">🇵🇱 Polski</a>
+            <a href="sv.html" class="lang-option">🇸🇪 Svenska</a>
+            <a href="fi.html" class="lang-option">🇫🇮 Suomi</a>
+            <a href="no.html" class="lang-option">🇳🇴 Norsk</a>
         </div>
     </div>
     
@@ -510,64 +461,67 @@
     </div>
     
     <script>
-        // Auto-detect language based on browser preferences
-        function detectLanguage() {
-            const userLang = navigator.language || navigator.userLanguage;
-            const supportedLanguages = {
-                'ko': 'ko.html',
-                'ko-KR': 'ko.html',
-                'ko-KP': 'ko.html',
-                'it': 'it.html',
-                'pt': 'pt.html',
-                'es': 'es.html',
-                'fr': 'fr.html',
-                'de': 'de.html',
-                'ar': 'ar.html',
-                'ja': 'ja.html',
-                'ru': 'ru.html',
-                'pl': 'pl.html',
-                'sv': 'sv.html',
-                'fi': 'fi.html',
-                'no': 'no.html',
-                'zh': 'zh.html',
-                'zh-CN': 'zh.html',
-                'zh-TW': 'zh.html'
-            };
-            
-            // Check for exact match first
-            if (supportedLanguages[userLang]) {
-                return supportedLanguages[userLang];
-            }
-            
-            // Check for language code only (e.g., 'ko' from 'ko-KR')
-            const langCode = userLang.split('-')[0];
-            if (supportedLanguages[langCode]) {
-                return supportedLanguages[langCode];
-            }
-            
-            return 'index.html'; // Default to English
+        // 语言选择器相关功能
+        function toggleLanguageMenu() {
+            const menu = document.getElementById('languageMenu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
         }
         
-        // Check if user has been redirected or has preference
-        const hasLanguagePreference = localStorage.getItem('suika-language-preference');
-        const currentPage = window.location.pathname;
+        // 点击外部关闭菜单
+        document.addEventListener('click', function(event) {
+            const selector = document.querySelector('.language-selector');
+            if (!selector.contains(event.target)) {
+                document.getElementById('languageMenu').style.display = 'none';
+            }
+        });
         
-        if (!hasLanguagePreference && currentPage === '/') {
-            const detectedLanguage = detectLanguage();
-            if (detectedLanguage !== 'index.html') {
-                localStorage.setItem('suika-language-preference', detectedLanguage);
-                window.location.href = detectedLanguage;
+        // 语言检测和重定向
+        function detectAndRedirectLanguage() {
+            const userLanguageChoice = localStorage.getItem('userLanguageChoice');
+            
+            if (userLanguageChoice) {
+                return;
+            }
+            
+            const userLang = navigator.language || navigator.languages[0] || 'en';
+            
+            const koreanLanguages = ['ko', 'ko-KR', 'ko-KP'];
+            const isKoreanLanguage = koreanLanguages.some(lang => 
+                userLang.toLowerCase().startsWith(lang.toLowerCase())
+            );
+            
+            if (isKoreanLanguage && window.location.pathname.indexOf('ko.html') === -1) {
+                window.location.href = 'ko.html';
             }
         }
         
-        // Save language preference when user manually selects a language
-        document.querySelectorAll('.language-option').forEach(option => {
+        function recordLanguageChoice() {
+            localStorage.setItem('userLanguageChoice', 'ko');
+        }
+        
+        document.addEventListener('DOMContentLoaded', detectAndRedirectLanguage);
+        
+        // 为语言选项添加点击事件
+        document.querySelectorAll('.lang-option').forEach(option => {
             option.addEventListener('click', function() {
                 const href = this.getAttribute('href');
-                const langFile = href === '/' ? 'index.html' : href.substring(1);
-                localStorage.setItem('suika-language-preference', langFile);
+                const langCode = href.replace('.html', '').replace('index', 'en');
+                localStorage.setItem('userLanguageChoice', langCode);
             });
         });
+        
+        function resetLanguageChoice() {
+            localStorage.removeItem('userLanguageChoice');
+            console.log('언어 설정이 재설정되었습니다');
+        }
+        
+        window.resetLanguageChoice = resetLanguageChoice;
+        
+        function ensureProperHeight() {
+            console.log('페이지가 완전히 로드되었습니다. 게임 영역의 적절한 높이를 확보합니다');
+        }
+        
+        window.addEventListener('load', ensureProperHeight);
     </script>
 </body>
 </html> 

@@ -94,24 +94,57 @@
       overflow: hidden;
       gap: 32px;
     }
-    .language-switch {
+    .language-selector {
       position: fixed;
       top: 20px;
       right: 20px;
+      z-index: 1001;
+    }
+    .language-btn {
       background: #ff9800;
       color: white;
       padding: 8px 16px;
       border-radius: 20px;
-      text-decoration: none;
+      border: none;
       font-weight: bold;
       font-size: 14px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
       transition: all 0.3s ease;
-      z-index: 1001;
+      cursor: pointer;
     }
-    .language-switch:hover {
+    .language-btn:hover {
       background: #e67e22;
       transform: translateY(-2px);
+    }
+    .language-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      margin-top: 8px;
+      min-width: 200px;
+      max-height: 400px;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    .lang-option {
+      display: block;
+      padding: 12px 16px;
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .lang-option:hover {
+      background: #f8f9fa;
+      color: #ff9800;
+    }
+    .lang-option:last-child {
+      border-bottom: none;
     }
     .main-wrapper {
       display: flex;
@@ -462,16 +495,23 @@
         line-height: 1.5 !important;
         margin-bottom: 12px !important;
       }
-      .language-switch {
+      .language-selector {
         position: fixed;
         top: 8px;
         left: 8px;
+        z-index: 1001;
+      }
+      .language-btn {
         padding: 4px 8px;
         font-size: 11px;
-        z-index: 1001;
         background: rgba(255, 152, 0, 0.9);
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .language-menu {
+        right: auto;
+        left: 0;
+        min-width: 180px;
       }
       
       /* 在移动端为游戏区域添加顶部边距，避免与语言按钮重叠 */
@@ -491,29 +531,59 @@
   </style>
 </head>
 <body>
-  <a href="index.html" class="language-switch">English</a>
+  <div class="language-selector">
+    <button class="language-btn" onclick="toggleLanguageMenu()">
+      🌐 语言
+    </button>
+    <div class="language-menu" id="languageMenu">
+      <a href="index.html" class="lang-option">🇺🇸 English</a>
+      <a href="zh.html" class="lang-option">🇨🇳 中文</a>
+      <a href="es.html" class="lang-option">🇪🇸 Español</a>
+      <a href="fr.html" class="lang-option">🇫🇷 Français</a>
+      <a href="de.html" class="lang-option">🇩🇪 Deutsch</a>
+      <a href="ja.html" class="lang-option">🇯🇵 日本語</a>
+      <a href="ar.html" class="lang-option">🇸🇦 العربية</a>
+      <a href="ru.html" class="lang-option">🇷🇺 Русский</a>
+      <a href="pt.html" class="lang-option">🇵🇹 Português</a>
+      <a href="it.html" class="lang-option">🇮🇹 Italiano</a>
+      <a href="ko.html" class="lang-option">🇰🇷 한국어</a>
+      <a href="pl.html" class="lang-option">🇵🇱 Polski</a>
+      <a href="sv.html" class="lang-option">🇸🇪 Svenska</a>
+      <a href="fi.html" class="lang-option">🇫🇮 Suomi</a>
+      <a href="no.html" class="lang-option">🇳🇴 Norsk</a>
+    </div>
+  </div>
   
   <script>
+    // 语言选择器相关功能
+    function toggleLanguageMenu() {
+      const menu = document.getElementById('languageMenu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+    
+    // 点击外部关闭菜单
+    document.addEventListener('click', function(event) {
+      const selector = document.querySelector('.language-selector');
+      if (!selector.contains(event.target)) {
+        document.getElementById('languageMenu').style.display = 'none';
+      }
+    });
+    
     // 自动语言检测功能
     function detectAndRedirectLanguage() {
-      // 检查是否已经手动选择过语言（使用localStorage记住用户选择）
       const userLanguageChoice = localStorage.getItem('userLanguageChoice');
       
-      // 如果用户已经手动选择过语言，则不进行自动重定向
       if (userLanguageChoice) {
         return;
       }
       
-      // 获取用户的语言偏好
       const userLang = navigator.language || navigator.languages[0] || 'en';
       
-      // 检查是否为中文相关语言
       const chineseLanguages = ['zh', 'zh-CN', 'zh-TW', 'zh-HK', 'zh-SG'];
       const isChineseLanguage = chineseLanguages.some(lang => 
         userLang.toLowerCase().startsWith(lang.toLowerCase())
       );
       
-      // 如果检测到非中文语言且当前在中文页面，则重定向到英文页面
       if (!isChineseLanguage && window.location.pathname.indexOf('zh.html') !== -1) {
         window.location.href = 'index.html';
       }
@@ -527,18 +597,21 @@
     // 页面加载时执行语言检测
     document.addEventListener('DOMContentLoaded', detectAndRedirectLanguage);
     
-    // 为语言切换按钮添加点击事件
-    document.querySelector('.language-switch').addEventListener('click', function() {
-      localStorage.setItem('userLanguageChoice', 'en');
+    // 为语言选项添加点击事件
+    document.querySelectorAll('.lang-option').forEach(option => {
+      option.addEventListener('click', function() {
+        const href = this.getAttribute('href');
+        const langCode = href.replace('.html', '').replace('index', 'en');
+        localStorage.setItem('userLanguageChoice', langCode);
+      });
     });
     
-    // 添加重置语言选择的功能（用于调试或重置偏好）
+    // 添加重置语言选择的功能
     function resetLanguageChoice() {
       localStorage.removeItem('userLanguageChoice');
       console.log('语言偏好已重置');
     }
     
-    // 在控制台提供重置功能
     window.resetLanguageChoice = resetLanguageChoice;
     
     // 简单的高度优化
@@ -546,7 +619,6 @@
       console.log('页面加载完成，确保游戏区域有足够高度');
     }
     
-    // 页面加载完成后确保高度正确
     window.addEventListener('load', ensureProperHeight);
   </script>
   <div class="container">

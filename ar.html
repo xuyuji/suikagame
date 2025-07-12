@@ -40,24 +40,58 @@
       gap: 32px;
       direction: rtl;
     }
-    .language-switch {
+    .language-selector {
       position: fixed;
       top: 20px;
       left: 20px;
+      z-index: 1001;
+    }
+    .language-btn {
       background: #ff9800;
       color: white;
       padding: 8px 16px;
       border-radius: 20px;
-      text-decoration: none;
+      border: none;
       font-weight: bold;
       font-size: 14px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
       transition: all 0.3s ease;
-      z-index: 1001;
+      cursor: pointer;
     }
-    .language-switch:hover {
+    .language-btn:hover {
       background: #e67e22;
       transform: translateY(-2px);
+    }
+    .language-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      margin-top: 8px;
+      min-width: 200px;
+      max-height: 400px;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    .lang-option {
+      display: block;
+      padding: 12px 16px;
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid #f0f0f0;
+      text-align: left;
+    }
+    .lang-option:hover {
+      background: #f8f9fa;
+      color: #ff9800;
+    }
+    .lang-option:last-child {
+      border-bottom: none;
     }
     .main-wrapper {
       display: flex;
@@ -381,16 +415,23 @@
         line-height: 1.5 !important;
         margin-bottom: 12px !important;
       }
-      .language-switch {
+      .language-selector {
         position: fixed;
         top: 8px;
         right: 8px;
+        z-index: 1001;
+      }
+      .language-btn {
         padding: 4px 8px;
         font-size: 11px;
-        z-index: 1001;
         background: rgba(255, 152, 0, 0.9);
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .language-menu {
+        left: auto;
+        right: 0;
+        min-width: 180px;
       }
       
       .container {
@@ -408,9 +449,44 @@
   </style>
 </head>
 <body>
-  <a href="index.html" class="language-switch">English</a>
+  <div class="language-selector">
+    <button class="language-btn" onclick="toggleLanguageMenu()">
+      🌐 اللغة
+    </button>
+    <div class="language-menu" id="languageMenu">
+      <a href="index.html" class="lang-option">🇺🇸 English</a>
+      <a href="zh.html" class="lang-option">🇨🇳 中文</a>
+      <a href="es.html" class="lang-option">🇪🇸 Español</a>
+      <a href="fr.html" class="lang-option">🇫🇷 Français</a>
+      <a href="de.html" class="lang-option">🇩🇪 Deutsch</a>
+      <a href="ja.html" class="lang-option">🇯🇵 日本語</a>
+      <a href="ar.html" class="lang-option">🇸🇦 العربية</a>
+      <a href="ru.html" class="lang-option">🇷🇺 Русский</a>
+      <a href="pt.html" class="lang-option">🇵🇹 Português</a>
+      <a href="it.html" class="lang-option">🇮🇹 Italiano</a>
+      <a href="ko.html" class="lang-option">🇰🇷 한국어</a>
+      <a href="pl.html" class="lang-option">🇵🇱 Polski</a>
+      <a href="sv.html" class="lang-option">🇸🇪 Svenska</a>
+      <a href="fi.html" class="lang-option">🇫🇮 Suomi</a>
+      <a href="no.html" class="lang-option">🇳🇴 Norsk</a>
+    </div>
+  </div>
   
   <script>
+    // 语言选择器相关功能
+    function toggleLanguageMenu() {
+      const menu = document.getElementById('languageMenu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+    
+    // 点击外部关闭菜单
+    document.addEventListener('click', function(event) {
+      const selector = document.querySelector('.language-selector');
+      if (!selector.contains(event.target)) {
+        document.getElementById('languageMenu').style.display = 'none';
+      }
+    });
+    
     function detectAndRedirectLanguage() {
       const userLanguageChoice = localStorage.getItem('userLanguageChoice');
       
@@ -436,8 +512,13 @@
     
     document.addEventListener('DOMContentLoaded', detectAndRedirectLanguage);
     
-    document.querySelector('.language-switch').addEventListener('click', function() {
-      localStorage.setItem('userLanguageChoice', 'en');
+    // 为语言选项添加点击事件
+    document.querySelectorAll('.lang-option').forEach(option => {
+      option.addEventListener('click', function() {
+        const href = this.getAttribute('href');
+        const langCode = href.replace('.html', '').replace('index', 'en');
+        localStorage.setItem('userLanguageChoice', langCode);
+      });
     });
     
     function resetLanguageChoice() {

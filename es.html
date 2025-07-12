@@ -401,7 +401,28 @@
   </style>
 </head>
 <body>
-  <a href="index.html" class="language-switch">English</a>
+  <div class="language-selector">
+    <button class="language-btn" onclick="toggleLanguageMenu()">
+      🌐 Idioma
+    </button>
+    <div class="language-menu" id="languageMenu">
+      <a href="index.html" class="lang-option">🇺🇸 English</a>
+      <a href="zh.html" class="lang-option">🇨🇳 中文</a>
+      <a href="es.html" class="lang-option">🇪🇸 Español</a>
+      <a href="fr.html" class="lang-option">🇫🇷 Français</a>
+      <a href="de.html" class="lang-option">🇩🇪 Deutsch</a>
+      <a href="ja.html" class="lang-option">🇯🇵 日本語</a>
+      <a href="ar.html" class="lang-option">🇸🇦 العربية</a>
+      <a href="ru.html" class="lang-option">🇷🇺 Русский</a>
+      <a href="pt.html" class="lang-option">🇵🇹 Português</a>
+      <a href="it.html" class="lang-option">🇮🇹 Italiano</a>
+      <a href="ko.html" class="lang-option">🇰🇷 한국어</a>
+      <a href="pl.html" class="lang-option">🇵🇱 Polski</a>
+      <a href="sv.html" class="lang-option">🇸🇪 Svenska</a>
+      <a href="fi.html" class="lang-option">🇫🇮 Suomi</a>
+      <a href="no.html" class="lang-option">🇳🇴 Norsk</a>
+    </div>
+  </div>
   
   <script>
     function detectAndRedirectLanguage() {
