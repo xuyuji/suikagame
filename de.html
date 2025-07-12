@@ -3,17 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suika Wassermelonen Spiel</title>
-  <meta name="description" content="Spielen Sie das lustige Suika Wassermelonen Spiel. Kombinieren Sie Früchte, um größere Früchte zu erstellen und hohe Punkte zu erzielen. Kostenlos zu spielen!">
-  <meta name="keywords" content="Wassermelonen Spiel, Suika Game, Früchte kombinieren, Puzzle Spiel, kostenloses Spiel">
+  <title>Suika Wassermelonen-Spiel - Kostenloses Online-Frucht-Merge-Spiel</title>
+  <meta name="description" content="Spiele das süchtig machende Suika Wassermelonen-Spiel kostenlos online! Lass Früchte fallen und verschmelze sie zur größten Wassermelone. Ein lustiges physikbasiertes Puzzle-Spiel.">
+  <meta name="keywords" content="suika spiel, wassermelonen spiel, frucht merge spiel, puzzle spiel, online spiel, kostenloses spiel, physik spiel, casual spiel">
+  <meta name="author" content="Suika Game">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://tu-sitio.com/de.html">
-  <link rel="alternate" hreflang="en" href="https://tu-sitio.com/index.html">
-  <link rel="alternate" hreflang="zh" href="https://tu-sitio.com/zh.html">
-  <link rel="alternate" hreflang="es" href="https://tu-sitio.com/es.html">
-  <link rel="alternate" hreflang="fr" href="https://tu-sitio.com/fr.html">
-  <link rel="alternate" hreflang="de" href="https://tu-sitio.com/de.html">
-  <link rel="alternate" hreflang="x-default" href="https://tu-sitio.com/index.html">
+  <meta name="theme-color" content="#ff9800">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://suikagame.netlify.app/de.html">
+  
+  <!-- Language alternates -->
+  <link rel="alternate" hreflang="en" href="https://suikagame.netlify.app/">
+  <link rel="alternate" hreflang="zh-CN" href="https://suikagame.netlify.app/zh.html">
+  <link rel="alternate" hreflang="es" href="https://suikagame.netlify.app/es.html">
+  <link rel="alternate" hreflang="fr" href="https://suikagame.netlify.app/fr.html">
+  <link rel="alternate" hreflang="de" href="https://suikagame.netlify.app/de.html">
+  <link rel="alternate" hreflang="ja" href="https://suikagame.netlify.app/ja.html">
+  <link rel="alternate" hreflang="ar" href="https://suikagame.netlify.app/ar.html">
+  <link rel="alternate" hreflang="ru" href="https://suikagame.netlify.app/ru.html">
+  <link rel="alternate" hreflang="pt" href="https://suikagame.netlify.app/pt.html">
+  <link rel="alternate" hreflang="it" href="https://suikagame.netlify.app/it.html">
+  <link rel="alternate" hreflang="ko" href="https://suikagame.netlify.app/ko.html">
+  <link rel="alternate" hreflang="pl" href="https://suikagame.netlify.app/pl.html">
+  <link rel="alternate" hreflang="sv" href="https://suikagame.netlify.app/sv.html">
+  <link rel="alternate" hreflang="fi" href="https://suikagame.netlify.app/fi.html">
+  <link rel="alternate" hreflang="no" href="https://suikagame.netlify.app/no.html">
+  <link rel="alternate" hreflang="x-default" href="https://suikagame.netlify.app/">
+  
+  <!-- Open Graph tags for social sharing -->
+  <meta property="og:title" content="Suika Wassermelonen-Spiel - Kostenloses Online-Frucht-Merge-Spiel">
+  <meta property="og:description" content="Spiele das süchtig machende Suika Wassermelonen-Spiel kostenlos online! Lass Früchte fallen und verschmelze sie zur größten Wassermelone. Ein lustiges physikbasiertes Puzzle-Spiel.">
+  <meta property="og:image" content="https://suikagame.netlify.app/img/watermelon.png">
+  <meta property="og:url" content="https://suikagame.netlify.app/de.html">
+  <meta property="og:type" content="game">
+  <meta property="og:site_name" content="Suika Game">
+  <meta property="og:locale" content="de_DE">
+  
+  <!-- Twitter Card tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Suika Wassermelonen-Spiel - Kostenloses Online-Frucht-Merge-Spiel">
+  <meta name="twitter:description" content="Spiele das süchtig machende Suika Wassermelonen-Spiel kostenlos online! Lass Früchte fallen und verschmelze sie zur größten Wassermelone.">
+  <meta name="twitter:image" content="https://suikagame.netlify.app/img/watermelon.png">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/watermelon.png">
+  <link rel="apple-touch-icon" href="img/watermelon.png">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Game",
+    "name": "Suika Wassermelonen-Spiel",
+    "description": "Spiele das süchtig machende Suika Wassermelonen-Spiel kostenlos online! Lass Früchte fallen und verschmelze sie zur größten Wassermelone. Ein lustiges physikbasiertes Puzzle-Spiel.",
+    "url": "https://suikagame.netlify.app/de.html",
+    "image": "https://suikagame.netlify.app/img/watermelon.png",
+    "genre": "Puzzle-Spiel",
+    "gameItem": "Browser-Spiel",
+    "operatingSystem": "Alle",
+    "applicationCategory": "Spiel",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    }
+  }
+  </script>
   <style>
     body {
       margin: 0;
@@ -37,24 +93,61 @@
       overflow: hidden;
       gap: 32px;
     }
-    .language-switch {
+    .language-selector {
       position: fixed;
       top: 20px;
       right: 20px;
+      z-index: 1001;
+    }
+    .language-btn {
       background: #ff9800;
       color: white;
       padding: 8px 16px;
       border-radius: 20px;
-      text-decoration: none;
+      border: none;
       font-weight: bold;
       font-size: 14px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
       transition: all 0.3s ease;
-      z-index: 1001;
+      cursor: pointer;
     }
-    .language-switch:hover {
+    .language-btn:hover {
       background: #e67e22;
       transform: translateY(-2px);
+    }
+    .language-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      margin-top: 8px;
+      min-width: 200px;
+      max-height: 400px;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    .lang-option {
+      display: block;
+      padding: 12px 16px;
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .lang-option:hover {
+      background: #f8f9fa;
+      color: #ff9800;
+    }
+    .lang-option:last-child {
+      border-bottom: none;
+    }
+    .more-lang {
+      font-weight: bold;
+      color: #ff9800;
     }
     .main-wrapper {
       display: flex;
@@ -168,6 +261,7 @@
       position: relative;
     }
     
+    /* 确保水果列表在移动端不会产生滚动 */
     .side-fruits::-webkit-scrollbar {
       display: none;
     }
@@ -207,57 +301,85 @@
       padding: 8px 12px;
       margin-bottom: 0;
       font-size: 0.9em;
-      color: #333;
-      font-weight: bold;
+      font-weight: 500;
+      color: #8b6f47;
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-      width: 100%;
-      max-width: 160px;
-      box-sizing: border-box;
       min-height: 36px;
-    }
-    .chara.container .col-6:hover {
-      background: rgba(255, 255, 255, 0.9);
-      transform: translateY(-1px);
+      border-bottom: none;
+      width: auto;
+      min-width: 130px;
+      max-width: 100%;
+      box-sizing: border-box;
     }
     .chara.container .col-6 img {
-      width: 28px;
-      height: 28px;
-      object-fit: contain;
+      width: 26px;
+      height: 26px;
       margin-right: 10px;
+      border-radius: 50%;
       flex-shrink: 0;
     }
     .chara.container .col-6 span {
-      flex: 1;
-      font-size: 0.9em;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      vertical-align: middle;
+      display: inline-block;
     }
-    
     @media (max-width: 1100px) {
-      .main-wrapper {
-        flex-direction: column;
-        height: auto;
-        gap: 16px;
-        align-items: center;
+      .container { 
+        padding: 50px 8px 16px 8px; 
+        gap: 16px; 
       }
-      .main {
-        width: 100%;
-        max-width: 480px;
+      .main-wrapper { 
+        flex-direction: column; 
+        align-items: center; 
+        height: auto; 
+        max-height: none; 
+        gap: 16px; 
+      }
+      .side-left { 
+        width: 95vw; 
+        height: auto; 
+        overflow-y: visible;
+        order: 2;
+        padding: 0 8px;
+      }
+      .side-fruits { 
+        width: 95vw; 
+        height: auto; 
+        max-height: none;
+        overflow: visible;
+        order: 3;
+        padding: 0 8px;
+      }
+      .main { 
+        width: 95vw; 
         height: auto;
+        min-height: 500px;
+        order: 1;
       }
       .game-iframe {
         width: 100%;
         height: 88vh;
         min-height: 630px;
         max-height: 750px;
+        border: 2px solid #ff9800;
       }
-      .side-left, .side-fruits {
-        width: 100%;
-        max-width: 480px;
-        height: auto;
-        padding: 0 8px;
+      .details-section { 
+        padding: 16px; 
+        order: 4;
+      }
+      .details-section > div { 
+        grid-template-columns: 1fr; 
+        gap: 16px; 
+      }
+      .language-switch {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        padding: 6px 12px;
+        font-size: 12px;
+        z-index: 1001;
+        background: rgba(255, 152, 0, 0.9);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
       }
       .fruit-circle {
         width: 120px;
@@ -269,7 +391,7 @@
         height: 100px;
       }
       .section-title {
-        font-size: 1.1em;
+        font-size: 1em;
         padding: 8px 0;
         margin-bottom: 8px;
       }
@@ -376,23 +498,32 @@
         line-height: 1.5 !important;
         margin-bottom: 12px !important;
       }
-      .language-switch {
+      .language-selector {
         position: fixed;
         top: 8px;
         left: 8px;
+        z-index: 1001;
+      }
+      .language-btn {
         padding: 4px 8px;
         font-size: 11px;
-        z-index: 1001;
         background: rgba(255, 152, 0, 0.9);
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.2);
       }
+      .language-menu {
+        right: auto;
+        left: 0;
+        min-width: 180px;
+      }
       
+      /* 在移动端为游戏区域添加顶部边距，避免与语言按钮重叠 */
       .container {
         padding: 50px 4px 12px 4px;
       }
     }
     
+    /* 小屏手机优化 - 简化版本 */
     @media (max-width: 480px) {
       .game-iframe {
         height: 82vh;
@@ -427,6 +558,21 @@
   </div>
   
   <script>
+    // 语言选择器相关功能
+    function toggleLanguageMenu() {
+      const menu = document.getElementById('languageMenu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+    
+    // 点击外部关闭菜单
+    document.addEventListener('click', function(event) {
+      const selector = document.querySelector('.language-selector');
+      if (!selector.contains(event.target)) {
+        document.getElementById('languageMenu').style.display = 'none';
+      }
+    });
+    
+    // 自动语言检测功能
     function detectAndRedirectLanguage() {
       const userLanguageChoice = localStorage.getItem('userLanguageChoice');
       
@@ -436,35 +582,64 @@
       
       const userLang = navigator.language || navigator.languages[0] || 'en';
       
-      const germanLanguages = ['de', 'de-DE', 'de-AT', 'de-CH'];
-      const isGermanLanguage = germanLanguages.some(lang => 
-        userLang.toLowerCase().startsWith(lang.toLowerCase())
-      );
+      // 语言映射
+      const languageMap = {
+        'zh': 'zh.html',
+        'zh-cn': 'zh.html',
+        'zh-tw': 'zh.html',
+        'zh-hk': 'zh.html',
+        'es': 'es.html',
+        'es-es': 'es.html',
+        'es-mx': 'es.html',
+        'fr': 'fr.html',
+        'fr-fr': 'fr.html',
+        'fr-ca': 'fr.html',
+        'de': 'de.html',
+        'de-de': 'de.html',
+        'ja': 'ja.html',
+        'ja-jp': 'ja.html',
+        'ar': 'ar.html',
+        'ar-sa': 'ar.html'
+      };
       
-      if (isGermanLanguage && window.location.pathname.indexOf('de.html') === -1) {
-        window.location.href = 'de.html';
+      const detectedLang = userLang.toLowerCase();
+      const targetPage = languageMap[detectedLang] || languageMap[detectedLang.split('-')[0]];
+      
+      if (targetPage) {
+        window.location.href = targetPage;
       }
     }
     
+    // 记录用户的语言选择
     function recordLanguageChoice() {
       localStorage.setItem('userLanguageChoice', 'de');
     }
     
+    // 页面加载时执行语言检测
     document.addEventListener('DOMContentLoaded', detectAndRedirectLanguage);
     
-    document.querySelector('.language-switch').addEventListener('click', function() {
-      localStorage.setItem('userLanguageChoice', 'en');
+    // 为语言选项添加点击事件
+    document.querySelectorAll('.lang-option').forEach(option => {
+      option.addEventListener('click', function() {
+        const href = this.getAttribute('href');
+        if (href !== 'language-selector.html') {
+          const langCode = href.replace('.html', '').replace('index', 'en');
+          localStorage.setItem('userLanguageChoice', langCode);
+        }
+      });
     });
     
+    // 添加重置语言选择的功能
     function resetLanguageChoice() {
       localStorage.removeItem('userLanguageChoice');
-      console.log('Sprachpräferenz zurückgesetzt');
+      console.log('Language preference reset');
     }
     
     window.resetLanguageChoice = resetLanguageChoice;
     
+    // 简单的高度优化
     function ensureProperHeight() {
-      console.log('Seite vollständig geladen, sorge für angemessene Spielhöhe');
+      console.log('页面加载完成，确保游戏区域有足够高度');
     }
     
     window.addEventListener('load', ensureProperHeight);
@@ -474,13 +649,13 @@
       <div class="side-left">
         <div class="section-title">Spielregeln</div>
         <div class="fruit-circle">
-          <img src="img/seicho.png" alt="Früchte-Evolutionskreis" />
+          <img src="img/seicho.png" alt="Frucht-Entwicklungs-Kreis" />
         </div>
-        <div class="rules-box">
-          Einfache Regeln:<br>
-          Früchte fallen lassen zum Kombinieren<br>
-          Größere Früchte für mehr Punkte erstellen!
-        </div>
+              <div class="rules-box">
+        Einfache Regeln:<br>
+        Lass Früchte fallen, um sie zu verbinden<br>
+        Mache größere Früchte für mehr Punkte!
+      </div>
       </div>
       <div class="main">
         <iframe class="game-iframe" src="https://suikagame.io/game/suika-game/" allowfullscreen frameborder="0" scrolling="no"></iframe>
@@ -525,24 +700,24 @@
       </div>
     </div>
     <div class="details-section">
-      <h2 style="color: #8b4513; margin-bottom: 24px; text-align: center; font-size: 1.5em;">Wie man das Suika Wassermelonen Spiel spielt</h2>
+      <h2 style="color: #8b4513; margin-bottom: 24px; text-align: center; font-size: 1.5em;">Wie man das Suika Wassermelonen-Spiel spielt</h2>
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start;">
         <div>
           <h3 style="color: #8b4513; margin-bottom: 16px;">Spielregeln</h3>
           <p style="color: #654321; line-height: 1.6; margin-bottom: 16px;">
-            Die Regeln des Suika Wassermelonen Spiels sind sehr einfach! Du musst eine größere Frucht erstellen, indem du zwei gleiche kleine Früchte wie Äpfel kombinierst.
+            Die Regeln des Suika Wassermelonen-Spiels sind sehr einfach! Du musst eine größere Frucht machen, indem du zwei gleiche kleine Früchte wie den Apfel kombinierst.
           </p>
           <p style="color: #654321; line-height: 1.6; margin-bottom: 16px;">
-            Wenn zwei Früchte des gleichen Typs sich berühren, verschmelzen sie zu einer größeren Frucht. Das Ziel ist es, die größte Frucht zu erstellen - die Wassermelone!
+            Wenn zwei Früchte des gleichen Typs sich berühren, verschmelzen sie zu einer größeren Frucht. Das Ziel ist es, die größtmögliche Frucht zu erschaffen - die Wassermelone!
           </p>
         </div>
         <div>
           <h3 style="color: #8b4513; margin-bottom: 16px;">Punktesystem</h3>
           <p style="color: #654321; line-height: 1.6; margin-bottom: 16px;">
-            Jede Frucht hat einen anderen Punktwert. Je größer die Frucht, desto mehr Punkte erhältst du, wenn du sie erstellst.
+            Jede Frucht hat einen anderen Punktewert. Je größer die Frucht, desto mehr Punkte verdienst du, wenn du sie erschaffst.
           </p>
           <p style="color: #654321; line-height: 1.6; margin-bottom: 16px;">
-            Versuche Kettenreaktionen zu erstellen, indem du mehrere Früchte auf einmal kombinierst, um deinen Punktestand zu maximieren!
+            Versuche Kettenreaktionen zu erzeugen, indem du mehrere Früchte gleichzeitig kombinierst, um deine Punktzahl zu maximieren!
           </p>
         </div>
       </div>
