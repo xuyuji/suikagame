@@ -1,5 +1,10 @@
-# 将所有未找到的页面重定向到主页
-/* /index.html 200
-
 # 如果有人访问旧的文件名，重定向到新的
-/suikagame.html /index.html 301 
+/suikagame.html /index.html 301
+
+# 中文版本路由
+/zh/* /zh.html 200
+/chinese /zh.html 301
+/cn /zh.html 301
+
+# 将所有未找到的页面重定向到主页
+/* /index.html 200 

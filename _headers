@@ -14,6 +14,11 @@
 /*.html
   Cache-Control: public, max-age=3600
 
+# 中文版本页面
+/zh.html
+  Cache-Control: public, max-age=3600
+  Content-Language: zh-CN
+
 # 根目录文件
 /
   Cache-Control: public, max-age=3600 
