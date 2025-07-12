@@ -1,10 +1,74 @@
 # 如果有人访问旧的文件名，重定向到新的
 /suikagame.html /index.html 301
 
+# 语言选择器
+/lang /language-selector.html 200
+/languages /language-selector.html 200
+
 # 中文版本路由
 /zh/* /zh.html 200
 /chinese /zh.html 301
 /cn /zh.html 301
+
+# 西班牙语版本路由
+/es/* /es.html 200
+/spanish /es.html 301
+/espanol /es.html 301
+
+# 法语版本路由
+/fr/* /fr.html 200
+/french /fr.html 301
+/francais /fr.html 301
+
+# 德语版本路由
+/de/* /de.html 200
+/german /de.html 301
+/deutsch /de.html 301
+
+# 日语版本路由
+/ja/* /ja.html 200
+/japanese /ja.html 301
+/jp /ja.html 301
+
+# 阿拉伯语版本路由
+/ar/* /ar.html 200
+/arabic /ar.html 301
+
+# 俄语版本路由
+/ru/* /ru.html 200
+/russian /ru.html 301
+
+# 葡萄牙语版本路由
+/pt/* /pt.html 200
+/portuguese /pt.html 301
+/br /pt.html 301
+
+# 意大利语版本路由
+/it/* /it.html 200
+/italian /it.html 301
+
+# 韩语版本路由
+/ko/* /ko.html 200
+/korean /ko.html 301
+/kr /ko.html 301
+
+# 波兰语版本路由
+/pl/* /pl.html 200
+/polish /pl.html 301
+
+# 瑞典语版本路由
+/sv/* /sv.html 200
+/swedish /sv.html 301
+/se /sv.html 301
+
+# 芬兰语版本路由
+/fi/* /fi.html 200
+/finnish /fi.html 301
+
+# 挪威语版本路由
+/no/* /no.html 200
+/norwegian /no.html 301
+/nb /no.html 301
 
 # 将所有未找到的页面重定向到主页
 /* /index.html 200 

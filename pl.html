@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gra Suika - Gra Puzzle z Owocami w Stylu Tetris | Graj Online</title>
+    <meta name="description" content="Zagraj w słynną grę Suika (Arbuz) online za darmo! Łącz owoce, aby stworzyć arbuza w najlepszej grze puzzle w stylu Tetris. Uzależniająca i zabawna!">
+    <meta name="keywords" content="gra suika, gra arbuz, puzzle owoce, tetris owoce, gra online, gry za darmo, polskie gry">
+    <meta name="author" content="Suika Game">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://suikagame.netlify.app/pl.html">
+    <meta property="og:title" content="Gra Suika - Gra Puzzle z Owocami w Stylu Tetris">
+    <meta property="og:description" content="Zagraj w słynną grę Suika (Arbuz) online za darmo! Łącz owoce, aby stworzyć arbuza.">
+    <meta property="og:image" content="https://suikagame.netlify.app/img/watermelon.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://suikagame.netlify.app/pl.html">
+    <meta property="twitter:title" content="Gra Suika - Gra Puzzle z Owocami w Stylu Tetris">
+    <meta property="twitter:description" content="Zagraj w słynną grę Suika (Arbuz) online za darmo! Łącz owoce, aby stworzyć arbuza.">
+    <meta property="twitter:image" content="https://suikagame.netlify.app/img/watermelon.png">
+    
+    <!-- Canonical and Hreflang -->
+    <link rel="canonical" href="https://suikagame.netlify.app/pl.html">
+    <link rel="alternate" href="https://suikagame.netlify.app/" hreflang="en">
+    <link rel="alternate" href="https://suikagame.netlify.app/zh.html" hreflang="zh">
+    <link rel="alternate" href="https://suikagame.netlify.app/es.html" hreflang="es">
+    <link rel="alternate" href="https://suikagame.netlify.app/fr.html" hreflang="fr">
+    <link rel="alternate" href="https://suikagame.netlify.app/de.html" hreflang="de">
+    <link rel="alternate" href="https://suikagame.netlify.app/ar.html" hreflang="ar">
+    <link rel="alternate" href="https://suikagame.netlify.app/ja.html" hreflang="ja">
+    <link rel="alternate" href="https://suikagame.netlify.app/ru.html" hreflang="ru">
+    <link rel="alternate" href="https://suikagame.netlify.app/pt.html" hreflang="pt">
+    <link rel="alternate" href="https://suikagame.netlify.app/it.html" hreflang="it">
+    <link rel="alternate" href="https://suikagame.netlify.app/ko.html" hreflang="ko">
+    <link rel="alternate" href="https://suikagame.netlify.app/pl.html" hreflang="pl">
+    <link rel="alternate" href="https://suikagame.netlify.app/sv.html" hreflang="sv">
+    <link rel="alternate" href="https://suikagame.netlify.app/fi.html" hreflang="fi">
+    <link rel="alternate" href="https://suikagame.netlify.app/no.html" hreflang="no">
+    
+    <!-- Regional variants -->
+    <link rel="alternate" href="https://suikagame.netlify.app/pl.html" hreflang="pl-PL">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/watermelon.png" type="image/png">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            color: #f0f0f0;
+            margin-bottom: 20px;
+        }
+        
+        .language-selector {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+        
+        .language-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .language-btn {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 25px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .language-btn:hover {
+            background: rgba(255, 255, 255, 0.95);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .language-dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            min-width: 200px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            z-index: 1001;
+            margin-top: 5px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .language-dropdown:hover .language-dropdown-content {
+            display: block;
+        }
+        
+        .language-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .language-option:last-child {
+            border-bottom: none;
+        }
+        
+        .language-option:hover {
+            background: rgba(103, 126, 234, 0.1);
+            transform: translateX(5px);
+        }
+        
+        .language-option.current {
+            background: rgba(103, 126, 234, 0.2);
+            font-weight: 600;
+        }
+        
+        .flag-icon {
+            width: 24px;
+            height: 18px;
+            border-radius: 3px;
+            background-size: cover;
+            background-position: center;
+            flex-shrink: 0;
+        }
+        
+        .flag-pl { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHk9IjkiIHdpZHRoPSIyNCIgaGVpZ2h0PSI5IiBmaWxsPSIjZmYwMDAwIi8+CjwvdGV4dD4KPC9zdmc+'); }
+        
+        .game-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+        }
+        
+        .game-frame {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .fruits-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .fruit-item {
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            background: rgba(255, 255, 255, 0.5);
+        }
+        
+        .fruit-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.8);
+        }
+        
+        .fruit-item img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            margin-bottom: 5px;
+        }
+        
+        .fruit-name {
+            font-size: 0.9em;
+            font-weight: 500;
+            color: #555;
+        }
+        
+        .rules {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+        }
+        
+        .rules h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .rules ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .rules li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .rules li:before {
+            content: "🍎";
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+        
+        .tips {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .tips h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .tips ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .tips li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .tips li:before {
+            content: "💡";
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .subtitle {
+                font-size: 1em;
+            }
+            
+            .game-container,
+            .rules,
+            .tips {
+                padding: 20px;
+            }
+            
+            .game-frame {
+                height: 500px;
+            }
+            
+            .fruits-showcase {
+                grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+                gap: 10px;
+                padding: 15px;
+            }
+            
+            .fruit-item img {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .fruit-name {
+                font-size: 0.8em;
+            }
+            
+            .language-selector {
+                position: static;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .game-frame {
+                height: 400px;
+            }
+            
+            .fruits-showcase {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="language-selector">
+        <div class="language-dropdown">
+            <button class="language-btn">
+                <span class="flag-icon flag-pl"></span>
+                <span>Polski</span>
+                <span>▼</span>
+            </button>
+            <div class="language-dropdown-content">
+                <a href="/" class="language-option">
+                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSI2IiBmaWxsPSIjZmYwMDAwIi8+CjxyZWN0IHk9IjEyIiB3aWR0aD0iMjQiIGhlaWdodD0iNiIgZmlsbD0iI2ZmMDAwMCIvPgo8L3N2Zz4K')"></span>
+                    <span>English</span>
+                </a>
+                <a href="/zh.html" class="language-option">
+                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmYwMDAwIi8+CjxwYXRoIGQ9Ik0yIDJMMTAgMTBNMTAgMkwyIDEwIiBzdHJva2U9IiNmZmZmMDAiIHN0cm9rZS13aWR0aD0iMiIvPgo8L3N2Zz4K')"></span>
+                    <span>中文</span>
+                </a>
+                <a href="/es.html" class="language-option">
+                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSI2IiBmaWxsPSIjZmYwMDAwIi8+CjxyZWN0IHk9IjEyIiB3aWR0aD0iMjQiIGhlaWdodD0iNiIgZmlsbD0iI2ZmMDAwMCIvPgo8L3N2Zz4K')"></span>
+                    <span>Español</span>
+                </a>
+                <a href="/fr.html" class="language-option">
+                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjE4IiBmaWxsPSIjMDA2NmZmIi8+CjxyZWN0IHg9IjE2IiB3aWR0aD0iOCIgaGVpZ2h0PSIxOCIgZmlsbD0iI2ZmMDAwMCIvPgo8L3N2Zz4K')"></span>
+                    <span>Français</span>
+                </a>
+                <a href="/de.html" class="language-option">
+                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSI2IiBmaWxsPSIjMDAwIi8+CjxyZWN0IHk9IjEyIiB3aWR0aD0iMjQiIGhlaWdodD0iNiIgZmlsbD0iI2ZmMDAwMCIvPgo8L3N2Zz4K')"></span>
+                    <span>Deutsch</span>
+                </a>
+                <a href="/ar.html" class="language-option">
+                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSI2IiBmaWxsPSIjZmYwMDAwIi8+CjxyZWN0IHk9IjEyIiB3aWR0aD0iMjQiIGhlaWdodD0iNiIgZmlsbD0iIzAwMCIvPgo8L3N2Zz4K')"></span>
+                    <span>العربية</span>
+                </a>
+                <a href="/ja.html" class="language-option">
+                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iOSIgcj0iNCIgZmlsbD0iI2ZmMDAwMCIvPgo8L3N2Zz4K')"></span>
+                    <span>日本語</span>
+                </a>
+                <a href="/ru.html" class="language-option">
+                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSI2IiBmaWxsPSIjMDA2NmZmIi8+CjxyZWN0IHk9IjEyIiB3aWR0aD0iMjQiIGhlaWdodD0iNiIgZmlsbD0iI2ZmMDAwMCIvPgo8L3N2Zz4K')"></span>
+                    <span>Русский</span>
+                </a>
+                <a href="/pt.html" class="language-option">
+                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSI5IiBoZWlnaHQ9IjE4IiBmaWxsPSIjMDA2NjAwIi8+CjxyZWN0IHg9IjkiIHdpZHRoPSIxNSIgaGVpZ2h0PSIxOCIgZmlsbD0iI2ZmMDAwMCIvPgo8L3N2Zz4K')"></span>
+                    <span>Português</span>
+                </a>
+                <a href="/it.html" class="language-option">
+                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjE4IiBmaWxsPSIjMDA2NmZmIi8+CjxyZWN0IHg9IjE2IiB3aWR0aD0iOCIgaGVpZ2h0PSIxOCIgZmlsbD0iI2ZmMDAwMCIvPgo8L3N2Zz4K')"></span>
+                    <span>Italiano</span>
+                </a>
+                <a href="/ko.html" class="language-option">
+                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iOSIgcj0iNCIgZmlsbD0iI2ZmMDAwMCIvPgo8L3N2Zz4K')"></span>
+                    <span>한국어</span>
+                </a>
+                <a href="/pl.html" class="language-option current">
+                    <span class="flag-icon flag-pl"></span>
+                    <span>Polski</span>
+                </a>
+                <a href="/sv.html" class="language-option">
+                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjMDA2NmZmIi8+CjxyZWN0IHg9IjgiIHdpZHRoPSI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmZjAwIi8+CjxyZWN0IHk9IjciIHdpZHRoPSIyNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmZjAwIi8+CjwvdGV4dD4KPC9zdmc+')"></span>
+                    <span>Svenska</span>
+                </a>
+                <a href="/fi.html" class="language-option">
+                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHg9IjgiIHdpZHRoPSI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjMDA2NmZmIi8+CjxyZWN0IHk9IjciIHdpZHRoPSIyNCIgaGVpZ2h0PSI0IiBmaWxsPSIjMDA2NmZmIi8+CjwvdGV4dD4KPC9zdmc+')"></span>
+                    <span>Suomi</span>
+                </a>
+                <a href="/no.html" class="language-option">
+                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmYwMDAwIi8+CjxyZWN0IHg9IjgiIHdpZHRoPSI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHk9IjciIHdpZHRoPSIyNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIi8+CjwvdGV4dD4KPC9zdmc+')"></span>
+                    <span>Norsk</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1>🍉 Gra Suika</h1>
+            <p class="subtitle">Gra Puzzle z Owocami w Stylu Tetris - Łącz Owoce, aby Stworzyć Arbuza!</p>
+        </header>
+        
+        <div class="game-container">
+            <iframe src="https://suika-game.poki.com/" class="game-frame" title="Gra Suika"></iframe>
+        </div>
+        
+        <div class="fruits-showcase">
+            <div class="fruit-item">
+                <img src="img/cherry.png" alt="Wiśnia">
+                <div class="fruit-name">Wiśnia</div>
+            </div>
+            <div class="fruit-item">
+                <img src="img/strawberry.png" alt="Truskawka">
+                <div class="fruit-name">Truskawka</div>
+            </div>
+            <div class="fruit-item">
+                <img src="img/grapes.png" alt="Winogrona">
+                <div class="fruit-name">Winogrona</div>
+            </div>
+            <div class="fruit-item">
+                <img src="img/dekopon.png" alt="Mandarynka">
+                <div class="fruit-name">Mandarynka</div>
+            </div>
+            <div class="fruit-item">
+                <img src="img/orange.png" alt="Pomarańcza">
+                <div class="fruit-name">Pomarańcza</div>
+            </div>
+            <div class="fruit-item">
+                <img src="img/apple.png" alt="Jabłko">
+                <div class="fruit-name">Jabłko</div>
+            </div>
+            <div class="fruit-item">
+                <img src="img/pear.png" alt="Gruszka">
+                <div class="fruit-name">Gruszka</div>
+            </div>
+            <div class="fruit-item">
+                <img src="img/peach.png" alt="Brzoskwinia">
+                <div class="fruit-name">Brzoskwinia</div>
+            </div>
+            <div class="fruit-item">
+                <img src="img/pineapple.png" alt="Ananas">
+                <div class="fruit-name">Ananas</div>
+            </div>
+            <div class="fruit-item">
+                <img src="img/melon.png" alt="Melon">
+                <div class="fruit-name">Melon</div>
+            </div>
+            <div class="fruit-item">
+                <img src="img/watermelon.png" alt="Arbuz">
+                <div class="fruit-name">Arbuz</div>
+            </div>
+        </div>
+        
+        <div class="rules">
+            <h2>📋 Jak Grać</h2>
+            <ul>
+                <li>Upuszczaj owoce do pudełka i spraw, aby dwa identyczne owoce się dotknęły</li>
+                <li>Gdy dwa owoce tego samego typu się dotykają, łączą się w większy owoc</li>
+                <li>Kontynuuj łączenie, aby stworzyć końcowy arbuz</li>
+                <li>Gra kończy się, gdy owoce przepełnią pudełko</li>
+                <li>Spróbuj osiągnąć najwyższy możliwy wynik!</li>
+            </ul>
+        </div>
+        
+        <div class="tips">
+            <h2>🎯 Wskazówki Strategiczne</h2>
+            <ul>
+                <li>Planuj swoje ruchy z wyprzedzeniem</li>
+                <li>Trzymaj większe owoce na dnie pudełka</li>
+                <li>Twórz combo łańcuchowe dla wyższych wyników</li>
+                <li>Używaj krawędzi pudełka do pozycjonowania mniejszych owoców</li>
+                <li>Nie śpiesz się - myśl przed upuszczeniem każdego owocu</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        // Auto-detect language based on browser preferences
+        function detectLanguage() {
+            const userLang = navigator.language || navigator.userLanguage;
+            const supportedLanguages = {
+                'pl': 'pl.html',
+                'pl-PL': 'pl.html',
+                'ko': 'ko.html',
+                'it': 'it.html',
+                'pt': 'pt.html',
+                'es': 'es.html',
+                'fr': 'fr.html',
+                'de': 'de.html',
+                'ar': 'ar.html',
+                'ja': 'ja.html',
+                'ru': 'ru.html',
+                'sv': 'sv.html',
+                'fi': 'fi.html',
+                'no': 'no.html',
+                'zh': 'zh.html',
+                'zh-CN': 'zh.html',
+                'zh-TW': 'zh.html'
+            };
+            
+            // Check for exact match first
+            if (supportedLanguages[userLang]) {
+                return supportedLanguages[userLang];
+            }
+            
+            // Check for language code only (e.g., 'pl' from 'pl-PL')
+            const langCode = userLang.split('-')[0];
+            if (supportedLanguages[langCode]) {
+                return supportedLanguages[langCode];
+            }
+            
+            return 'index.html'; // Default to English
+        }
+        
+        // Check if user has been redirected or has preference
+        const hasLanguagePreference = localStorage.getItem('suika-language-preference');
+        const currentPage = window.location.pathname;
+        
+        if (!hasLanguagePreference && currentPage === '/') {
+            const detectedLanguage = detectLanguage();
+            if (detectedLanguage !== 'index.html') {
+                localStorage.setItem('suika-language-preference', detectedLanguage);
+                window.location.href = detectedLanguage;
+            }
+        }
+        
+        // Save language preference when user manually selects a language
+        document.querySelectorAll('.language-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const href = this.getAttribute('href');
+                const langFile = href === '/' ? 'index.html' : href.substring(1);
+                localStorage.setItem('suika-language-preference', langFile);
+            });
+        });
+    </script>
+</body>
+</html> 
