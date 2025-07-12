@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suika Watermelon Game</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffd6ad;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 100vh;
+      width: 100vw;
+      box-sizing: border-box;
+      background: #ffd6ad;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      padding: 24px;
+      overflow: hidden;
+      gap: 32px;
+    }
+    .main-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      height: 700px;
+      box-sizing: border-box;
+      gap: 32px;
+      max-width: 1200px;
+      width: 100%;
+      position: relative;
+    }
+    .details-section {
+      background: #f0c794;
+      border-radius: 16px;
+      padding: 32px;
+      max-width: 1200px;
+      width: 100%;
+      box-sizing: border-box;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .side-left {
+      width: 320px;
+      padding: 0 16px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 700px;
+      overflow-y: visible;
+      justify-content: flex-start;
+    }
+    .fruit-circle {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      position: relative;
+      margin-bottom: 16px;
+      background: #ffe0b2;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .fruit-circle img {
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+      border-radius: 50%;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      background: #fff;
+    }
+    .section-title {
+      background: #ff9800;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.2em;
+      border-radius: 10px;
+      padding: 10px 0;
+      width: 90%;
+      text-align: center;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 0 #e07b00;
+    }
+    .rules-box {
+      background: #fff3e0;
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      text-align: center;
+      font-size: 1.1em;
+      color: #333;
+    }
+    .main {
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      margin: 0;
+      width: 428px;
+      height: 708px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      box-shadow: none;
+      position: relative;
+      overflow: visible;
+    }
+    .game-iframe {
+      border: 4px solid #ff9800;
+      width: 420px;
+      height: 700px;
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      box-sizing: border-box;
+      display: block;
+    }
+    .side-fruits {
+      width: 180px;
+      background: none;
+      box-sizing: border-box;
+      display: block;
+      padding: 0;
+      margin: 0;
+      height: auto;
+      max-height: 700px;
+      overflow: hidden;
+      position: relative;
+    }
+    .fruits-title {
+      background: #ff9800;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.1em;
+      border-radius: 10px;
+      padding: 8px 0;
+      width: 100%;
+      text-align: center;
+      margin: 0 0 12px 0;
+      box-shadow: 0 2px 0 #e07b00;
+      letter-spacing: 0.5px;
+    }
+    .chara.container {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 3px;
+    }
+    .chara.container .col-6 {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 10px;
+      padding: 8px 12px;
+      margin-bottom: 0;
+      font-size: 0.9em;
+      font-weight: 500;
+      color: #8b6f47;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      min-height: 36px;
+      border-bottom: none;
+      width: auto;
+      min-width: 130px;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    .chara.container .col-6 img {
+      width: 26px;
+      height: 26px;
+      margin-right: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .chara.container .col-6 span {
+      vertical-align: middle;
+      display: inline-block;
+    }
+    @media (max-width: 1100px) {
+      .container { padding: 16px; gap: 24px; }
+      .main-wrapper { 
+        flex-direction: column; 
+        align-items: center; 
+        height: auto; 
+        max-height: none; 
+        gap: 16px; 
+      }
+      .side-left, .side-fruits { 
+        width: 95vw; 
+        height: auto; 
+        overflow-y: visible; 
+      }
+      .main { width: 98vw; height: 70vw; min-height: 400px; }
+      .details-section { 
+        padding: 24px; 
+      }
+      .details-section > div { 
+        grid-template-columns: 1fr; 
+        gap: 24px; 
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="main-wrapper">
+      <div class="side-left">
+        <div class="section-title">Game Rules</div>
+        <div class="fruit-circle">
+          <img src="img/seicho.png" alt="Fruit Evolution Circle" />
+        </div>
+              <div class="rules-box">
+        Simple Rules:<br>
+        Drop fruits to combine them<br>
+        Make bigger fruits to score more!
+      </div>
+      </div>
+      <div class="main">
+        <iframe class="game-iframe" src="https://suikagame.io/game/suika-game/" allowfullscreen frameborder="0" scrolling="no"></iframe>
+      </div>
+      <div class="side-fruits">
+        <h2 class="fruits-title">Fruits</h2>
+        <ul class="chara container">
+          <li class="col-6">
+            <img src="img/cherry.png"><span>Cherries</span>
+          </li>
+          <li class="col-6">
+            <img src="img/strawberry.png"><span>Strawberry</span>
+          </li>
+          <li class="col-6">
+            <img src="img/grapes.png"><span>Grapes</span>
+          </li>
+          <li class="col-6">
+            <img src="img/dekopon.png"><span>Dekopon</span>
+          </li>
+          <li class="col-6">
+            <img src="img/orange.png"><span>Orange</span>
+          </li>
+          <li class="col-6">
+            <img src="img/apple.png"><span>Apple</span>
+          </li>
+          <li class="col-6">
+            <img src="img/pear.png"><span>Pear</span>
+          </li>
+          <li class="col-6">
+            <img src="img/peach.png"><span>Peach</span>
+          </li>
+          <li class="col-6">
+            <img src="img/pineapple.png"><span>Pineapple</span>
+          </li>
+          <li class="col-6">
+            <img src="img/melon.png"><span>Melon</span>
+          </li>
+          <li class="col-6">
+            <img src="img/watermelon.png"><span>Watermelon</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="details-section">
+      <h2 style="color: #8b4513; margin-bottom: 24px; text-align: center; font-size: 1.5em;">How to Play Suika Watermelon Game</h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start;">
+        <div>
+          <h3 style="color: #8b4513; margin-bottom: 16px;">Game Rules</h3>
+          <p style="color: #654321; line-height: 1.6; margin-bottom: 16px;">
+            The rules of Suika Watermelon game are very simple! You have to make a bigger fruit by combining two same small fruits such as Apple.
+          </p>
+          <p style="color: #654321; line-height: 1.6; margin-bottom: 16px;">
+            When two fruits of the same type touch each other, they will merge into a larger fruit. The goal is to create the largest fruit possible - the watermelon!
+          </p>
+        </div>
+        <div>
+          <h3 style="color: #8b4513; margin-bottom: 16px;">Scoring System</h3>
+          <p style="color: #654321; line-height: 1.6; margin-bottom: 16px;">
+            Each fruit has a different point value. The larger the fruit, the more points you earn when you create it.
+          </p>
+          <p style="color: #654321; line-height: 1.6; margin-bottom: 16px;">
+            Try to create chain reactions by combining multiple fruits at once to maximize your score!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
