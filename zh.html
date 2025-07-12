@@ -412,6 +412,91 @@
         padding: 50px 4px 12px 4px;
       }
     }
+    
+    /* 小屏手机优化 */
+    @media (max-width: 480px) {
+      .container { 
+        padding: 45px 2px 8px 2px; 
+        gap: 8px; 
+      }
+      .main { 
+        width: 99vw; 
+        min-height: 450px;
+      }
+      .game-iframe {
+        width: 100%;
+        height: 70vh;
+        min-height: 450px;
+        max-height: 550px;
+        border: 1px solid #ff9800;
+      }
+      .language-switch {
+        position: fixed;
+        top: 6px;
+        left: 6px;
+        padding: 3px 6px;
+        font-size: 10px;
+        z-index: 1001;
+        background: rgba(255, 152, 0, 0.9);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+    }
+    
+    /* 超小屏手机优化 */
+    @media (max-width: 375px) {
+      .game-iframe {
+        height: 65vh;
+        min-height: 400px;
+        max-height: 500px;
+      }
+      .container { 
+        padding: 40px 1px 6px 1px; 
+      }
+    }
+    
+    /* 针对屏幕高度较小的设备 */
+    @media (max-height: 600px) {
+      .game-iframe {
+        height: 60vh !important;
+        min-height: 350px !important;
+        max-height: 450px !important;
+      }
+      .container { 
+        gap: 6px; 
+      }
+      .side-left, .side-fruits {
+        display: none;
+      }
+    }
+    
+    /* 针对屏幕高度很小的设备 */
+    @media (max-height: 500px) {
+      .game-iframe {
+        height: 55vh !important;
+        min-height: 300px !important;
+        max-height: 400px !important;
+      }
+      .details-section {
+        display: none;
+      }
+    }
+    
+    /* 横屏模式优化 */
+    @media (orientation: landscape) and (max-height: 500px) {
+      .game-iframe {
+        height: 80vh !important;
+        min-height: 300px !important;
+        max-height: 400px !important;
+      }
+      .side-left, .side-fruits, .details-section {
+        display: none;
+      }
+      .container { 
+        padding: 35px 2px 4px 2px; 
+        gap: 4px; 
+      }
+    }
   </style>
 </head>
 <body>
@@ -464,6 +549,148 @@
     
     // 在控制台提供重置功能
     window.resetLanguageChoice = resetLanguageChoice;
+    
+    // 设备检测工具
+    function detectDevice() {
+      const ua = navigator.userAgent;
+      const isIOS = /iPad|iPhone|iPod/.test(ua);
+      const isAndroid = /Android/.test(ua);
+      const isSafari = /Safari/.test(ua) && !/Chrome/.test(ua);
+      const isChrome = /Chrome/.test(ua);
+      const isFirefox = /Firefox/.test(ua);
+      
+      return {
+        isIOS,
+        isAndroid,
+        isSafari,
+        isChrome,
+        isFirefox,
+        isMobile: window.innerWidth <= 768
+      };
+    }
+    
+    // 动态优化iframe高度
+    function optimizeIframeHeight() {
+      const iframe = document.querySelector('.game-iframe');
+      if (!iframe) return;
+      
+      // 获取实际可用的视口高度
+      const availableHeight = window.innerHeight;
+      const availableWidth = window.innerWidth;
+      const device = detectDevice();
+      
+      // 移动端设备检测
+      const isMobile = availableWidth <= 768;
+      const isSmallMobile = availableWidth <= 480;
+      const isVerySmallMobile = availableWidth <= 375;
+      
+      // 移动端优化
+      if (isMobile) {
+        let targetHeight;
+        let heightRatio;
+        
+        // iOS Safari 特殊处理
+        if (device.isIOS && device.isSafari) {
+          // iOS Safari 地址栏会影响vh计算，需要更保守的高度
+          heightRatio = 0.6;
+        } else {
+          heightRatio = 0.7;
+        }
+        
+        if (availableHeight <= 500) {
+          // 屏幕高度很小
+          targetHeight = Math.max(300, availableHeight * 0.5);
+        } else if (availableHeight <= 600) {
+          // 屏幕高度较小
+          targetHeight = Math.max(350, availableHeight * 0.55);
+        } else if (isVerySmallMobile) {
+          // 超小屏手机
+          targetHeight = Math.max(400, availableHeight * 0.6);
+        } else if (isSmallMobile) {
+          // 小屏手机
+          targetHeight = Math.max(450, availableHeight * 0.65);
+        } else {
+          // 普通手机
+          targetHeight = Math.max(500, availableHeight * heightRatio);
+        }
+        
+        // 设置计算出的高度
+        iframe.style.height = targetHeight + 'px';
+        iframe.style.minHeight = targetHeight + 'px';
+        iframe.style.maxHeight = (targetHeight + 100) + 'px';
+        
+        console.log(`优化iframe高度: ${targetHeight}px (可用高度: ${availableHeight}px, 设备: ${device.isIOS ? 'iOS' : device.isAndroid ? 'Android' : 'Other'})`);
+      }
+    }
+    
+    // 添加用户提示功能
+    function showOptimizationTip() {
+      const device = detectDevice();
+      
+      if (device.isMobile) {
+        // 检查是否已经显示过提示
+        const tipShown = localStorage.getItem('optimizationTipShown');
+        
+        if (!tipShown) {
+          // 创建提示元素
+          const tip = document.createElement('div');
+          tip.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            z-index: 1002;
+            text-align: center;
+            max-width: 300px;
+            line-height: 1.4;
+          `;
+          
+          if (device.isIOS) {
+            tip.innerHTML = 'iOS用户提示：如果游戏显示不完整，请尝试横屏浏览或点击浏览器的全屏按钮 📱';
+          } else {
+            tip.innerHTML = '移动端提示：如果游戏显示不完整，请尝试横屏浏览获得更好体验 📱';
+          }
+          
+          document.body.appendChild(tip);
+          
+          // 3秒后自动隐藏
+          setTimeout(() => {
+            tip.style.opacity = '0';
+            tip.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => tip.remove(), 500);
+          }, 3000);
+          
+          // 记住已经显示过提示
+          localStorage.setItem('optimizationTipShown', 'true');
+        }
+      }
+    }
+    
+    // 页面加载完成后优化
+    window.addEventListener('load', function() {
+      optimizeIframeHeight();
+      showOptimizationTip();
+    });
+    
+    // 屏幕旋转或窗口大小变化时重新优化
+    window.addEventListener('orientationchange', function() {
+      setTimeout(optimizeIframeHeight, 100);
+    });
+    
+    window.addEventListener('resize', function() {
+      setTimeout(optimizeIframeHeight, 100);
+    });
+    
+    // 添加调试功能
+    window.resetOptimizationTip = function() {
+      localStorage.removeItem('optimizationTipShown');
+      console.log('优化提示已重置');
+    };
   </script>
   <div class="container">
     <div class="main-wrapper">
