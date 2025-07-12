@@ -10,6 +10,8 @@
       padding: 0;
       background: #ffd6ad;
       font-family: 'Segoe UI', Arial, sans-serif;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
     }
     .container {
       display: flex;
@@ -26,7 +28,7 @@
       gap: 32px;
     }
     .language-switch {
-      position: absolute;
+      position: fixed;
       top: 20px;
       right: 20px;
       background: #ff9800;
@@ -38,7 +40,7 @@
       font-size: 14px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
       transition: all 0.3s ease;
-      z-index: 1000;
+      z-index: 1001;
     }
     .language-switch:hover {
       background: #e67e22;
@@ -155,6 +157,16 @@
       overflow: hidden;
       position: relative;
     }
+    
+    /* 确保水果列表在移动端不会产生滚动 */
+    .side-fruits::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .side-fruits {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
     .fruits-title {
       background: #ff9800;
       color: #fff;
@@ -256,10 +268,12 @@
         gap: 16px; 
       }
       .language-switch {
+        position: fixed;
         top: 10px;
         right: 10px;
         padding: 6px 12px;
         font-size: 12px;
+        z-index: 1001;
       }
       .fruit-circle {
         width: 120px;
@@ -379,16 +393,67 @@
         margin-bottom: 12px !important;
       }
       .language-switch {
+        position: fixed;
         top: 8px;
         right: 8px;
         padding: 4px 8px;
         font-size: 11px;
+        z-index: 1001;
       }
     }
   </style>
 </head>
 <body>
   <a href="zh.html" class="language-switch">中文</a>
+  
+  <script>
+    // 自动语言检测功能
+    function detectAndRedirectLanguage() {
+      // 检查是否已经手动选择过语言（使用localStorage记住用户选择）
+      const userLanguageChoice = localStorage.getItem('userLanguageChoice');
+      
+      // 如果用户已经手动选择过语言，则不进行自动重定向
+      if (userLanguageChoice) {
+        return;
+      }
+      
+      // 获取用户的语言偏好
+      const userLang = navigator.language || navigator.languages[0] || 'en';
+      
+      // 检查是否为中文相关语言
+      const chineseLanguages = ['zh', 'zh-CN', 'zh-TW', 'zh-HK', 'zh-SG'];
+      const isChineseLanguage = chineseLanguages.some(lang => 
+        userLang.toLowerCase().startsWith(lang.toLowerCase())
+      );
+      
+      // 如果检测到中文语言且当前在英文页面，则重定向到中文页面
+      if (isChineseLanguage && window.location.pathname.indexOf('zh.html') === -1) {
+        window.location.href = 'zh.html';
+      }
+    }
+    
+    // 记录用户的语言选择
+    function recordLanguageChoice() {
+      localStorage.setItem('userLanguageChoice', 'en');
+    }
+    
+    // 页面加载时执行语言检测
+    document.addEventListener('DOMContentLoaded', detectAndRedirectLanguage);
+    
+    // 为语言切换按钮添加点击事件
+    document.querySelector('.language-switch').addEventListener('click', function() {
+      localStorage.setItem('userLanguageChoice', 'zh');
+    });
+    
+    // 添加重置语言选择的功能（用于调试或重置偏好）
+    function resetLanguageChoice() {
+      localStorage.removeItem('userLanguageChoice');
+      console.log('Language preference reset');
+    }
+    
+    // 在控制台提供重置功能
+    window.resetLanguageChoice = resetLanguageChoice;
+  </script>
   <div class="container">
     <div class="main-wrapper">
       <div class="side-left">
