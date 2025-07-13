@@ -1,584 +1,727 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gioco Suika - Gioco di Puzzle della Frutta in Stile Tetris | Gioca Online</title>
-    <meta name="description" content="Gioca al famoso Gioco Suika (Anguria) online gratuitamente! Combina la frutta per creare l'anguria nel miglior gioco di puzzle in stile Tetris. Coinvolgente e divertente!">
-    <meta name="keywords" content="gioco suika, gioco anguria, puzzle frutta, tetris frutta, gioco online, giochi gratis, giochi italiani">
-    <meta name="author" content="Suika Game">
-    <meta name="robots" content="index, follow">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gioco Suika - Gioco di Puzzle della Frutta in Stile Tetris | Gioca Online</title>
+  <meta name="description" content="Gioca al famoso Gioco Suika (Anguria) online gratuitamente! Combina la frutta per creare l'anguria nel miglior gioco di puzzle in stile Tetris. Coinvolgente e divertente!">
+  <meta name="keywords" content="gioco suika, gioco anguria, puzzle frutta, tetris frutta, gioco online, giochi gratis, giochi italiani">
+  <meta name="author" content="Suika Game">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#ff9800">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://suikagame.netlify.app/it.html">
+  
+  <!-- Language alternates -->
+  <link rel="alternate" hreflang="en" href="https://suikagame.netlify.app/">
+  <link rel="alternate" hreflang="zh-CN" href="https://suikagame.netlify.app/zh.html">
+  <link rel="alternate" hreflang="es" href="https://suikagame.netlify.app/es.html">
+  <link rel="alternate" hreflang="fr" href="https://suikagame.netlify.app/fr.html">
+  <link rel="alternate" hreflang="de" href="https://suikagame.netlify.app/de.html">
+  <link rel="alternate" hreflang="ja" href="https://suikagame.netlify.app/ja.html">
+  <link rel="alternate" hreflang="ar" href="https://suikagame.netlify.app/ar.html">
+  <link rel="alternate" hreflang="ru" href="https://suikagame.netlify.app/ru.html">
+  <link rel="alternate" hreflang="pt" href="https://suikagame.netlify.app/pt.html">
+  <link rel="alternate" hreflang="it" href="https://suikagame.netlify.app/it.html">
+  <link rel="alternate" hreflang="ko" href="https://suikagame.netlify.app/ko.html">
+  <link rel="alternate" hreflang="pl" href="https://suikagame.netlify.app/pl.html">
+  <link rel="alternate" hreflang="sv" href="https://suikagame.netlify.app/sv.html">
+  <link rel="alternate" hreflang="fi" href="https://suikagame.netlify.app/fi.html">
+  <link rel="alternate" hreflang="no" href="https://suikagame.netlify.app/no.html">
+  <link rel="alternate" hreflang="x-default" href="https://suikagame.netlify.app/">
+  
+  <!-- Open Graph tags for social sharing -->
+  <meta property="og:title" content="Gioco Suika - Gioco di Puzzle della Frutta in Stile Tetris">
+  <meta property="og:description" content="Gioca al famoso Gioco Suika (Anguria) online gratuitamente! Combina la frutta per creare l'anguria nel miglior gioco di puzzle in stile Tetris.">
+  <meta property="og:image" content="https://suikagame.netlify.app/img/watermelon.png">
+  <meta property="og:url" content="https://suikagame.netlify.app/it.html">
+  <meta property="og:type" content="game">
+  <meta property="og:site_name" content="Suika Game">
+  <meta property="og:locale" content="it_IT">
+  
+  <!-- Twitter Card tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gioco Suika - Gioco di Puzzle della Frutta in Stile Tetris">
+  <meta name="twitter:description" content="Gioca al famoso Gioco Suika (Anguria) online gratuitamente! Combina la frutta per creare l'anguria.">
+  <meta name="twitter:image" content="https://suikagame.netlify.app/img/watermelon.png">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/watermelon.png">
+  <link rel="apple-touch-icon" href="img/watermelon.png">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Game",
+    "name": "Gioco Suika",
+    "description": "Gioca al famoso Gioco Suika (Anguria) online gratuitamente! Combina la frutta per creare l'anguria nel miglior gioco di puzzle in stile Tetris.",
+    "url": "https://suikagame.netlify.app/it.html",
+    "image": "https://suikagame.netlify.app/img/watermelon.png",
+    "genre": "Gioco di Puzzle",
+    "gameItem": "Gioco Browser",
+    "operatingSystem": "Qualsiasi",
+    "applicationCategory": "Gioco",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    }
+  }
+  </script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffd6ad;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 100vh;
+      width: 100vw;
+      box-sizing: border-box;
+      background: #ffd6ad;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      padding: 24px;
+      overflow: hidden;
+      gap: 32px;
+    }
+    .language-selector {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1001;
+    }
+    .language-btn {
+      background: #ff9800;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: none;
+      font-weight: bold;
+      font-size: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .language-btn:hover {
+      background: #e67e22;
+      transform: translateY(-2px);
+    }
+    .language-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      margin-top: 8px;
+      min-width: 200px;
+      max-height: 400px;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    .lang-option {
+      display: block;
+      padding: 12px 16px;
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .lang-option:hover {
+      background: #f8f9fa;
+      color: #ff9800;
+    }
+    .lang-option:last-child {
+      border-bottom: none;
+    }
+    .more-lang {
+      font-weight: bold;
+      color: #ff9800;
+    }
+    .main-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      height: 700px;
+      box-sizing: border-box;
+      gap: 32px;
+      max-width: 1200px;
+      width: 100%;
+      position: relative;
+    }
+    .details-section {
+      background: #f0c794;
+      border-radius: 16px;
+      padding: 32px;
+      max-width: 1200px;
+      width: 100%;
+      box-sizing: border-box;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .side-left {
+      width: 320px;
+      padding: 0 16px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 700px;
+      overflow-y: visible;
+      justify-content: flex-start;
+    }
+    .fruit-circle {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      position: relative;
+      margin-bottom: 16px;
+      background: #ffe0b2;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .fruit-circle img {
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+      border-radius: 50%;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      background: #fff;
+    }
+    .section-title {
+      background: #ff9800;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.2em;
+      border-radius: 10px;
+      padding: 10px 0;
+      width: 90%;
+      text-align: center;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 0 #e07b00;
+    }
+    .rules-box {
+      background: #fff3e0;
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      text-align: center;
+      font-size: 1.1em;
+      color: #333;
+    }
+    .main {
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      margin: 0;
+      width: 428px;
+      height: 708px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      box-shadow: none;
+      position: relative;
+      overflow: visible;
+    }
+    .game-iframe {
+      border: 4px solid #ff9800;
+      width: 420px;
+      height: 700px;
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      box-sizing: border-box;
+      display: block;
+    }
+    .side-fruits {
+      width: 180px;
+      background: none;
+      box-sizing: border-box;
+      display: block;
+      padding: 0;
+      margin: 0;
+      height: auto;
+      max-height: 700px;
+      overflow: hidden;
+      position: relative;
+    }
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://suikagame.netlify.app/it.html">
-    <meta property="og:title" content="Gioco Suika - Gioco di Puzzle della Frutta in Stile Tetris">
-    <meta property="og:description" content="Gioca al famoso Gioco Suika (Anguria) online gratuitamente! Combina la frutta per creare l'anguria.">
-    <meta property="og:image" content="https://suikagame.netlify.app/img/watermelon.png">
+    /* 确保水果列表在移动端不会产生滚动 */
+    .side-fruits::-webkit-scrollbar {
+      display: none;
+    }
     
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://suikagame.netlify.app/it.html">
-    <meta property="twitter:title" content="Gioco Suika - Gioco di Puzzle della Frutta in Stile Tetris">
-    <meta property="twitter:description" content="Gioca al famoso Gioco Suika (Anguria) online gratuitamente! Combina la frutta per creare l'anguria.">
-    <meta property="twitter:image" content="https://suikagame.netlify.app/img/watermelon.png">
+    .side-fruits {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .fruits-title {
+      background: #ff9800;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.1em;
+      border-radius: 10px;
+      padding: 8px 0;
+      width: 100%;
+      text-align: center;
+      margin: 0 0 12px 0;
+      box-shadow: 0 2px 0 #e07b00;
+      letter-spacing: 0.5px;
+    }
+    .chara.container {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 3px;
+    }
+    .chara.container .col-6 {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 10px;
+      padding: 8px 12px;
+      margin-bottom: 0;
+      font-size: 0.9em;
+      font-weight: 500;
+      color: #8b6f47;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      min-height: 36px;
+      border-bottom: none;
+      width: auto;
+      min-width: 130px;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    .chara.container .col-6 img {
+      width: 26px;
+      height: 26px;
+      margin-right: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .chara.container .col-6 span {
+      vertical-align: middle;
+      display: inline-block;
+    }
+    @media (max-width: 1100px) {
+      .container { 
+        padding: 50px 8px 16px 8px; 
+        gap: 16px; 
+      }
+      .main-wrapper { 
+        flex-direction: column; 
+        align-items: center; 
+        height: auto; 
+        max-height: none; 
+        gap: 16px; 
+      }
+      .side-left { 
+        width: 95vw; 
+        height: auto; 
+        overflow-y: visible;
+        order: 2;
+        padding: 0 8px;
+      }
+      .side-fruits { 
+        width: 95vw; 
+        height: auto; 
+        max-height: none;
+        overflow: visible;
+        order: 3;
+        padding: 0 8px;
+      }
+      .main { 
+        width: 95vw; 
+        height: auto;
+        min-height: 500px;
+        order: 1;
+      }
+      .game-iframe {
+        width: 100%;
+        height: 88vh;
+        min-height: 630px;
+        max-height: 750px;
+        border: 2px solid #ff9800;
+      }
+      .details-section { 
+        padding: 16px; 
+        order: 4;
+      }
+      .details-section > div { 
+        grid-template-columns: 1fr; 
+        gap: 16px; 
+      }
+      .language-switch {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        padding: 6px 12px;
+        font-size: 12px;
+        z-index: 1001;
+        background: rgba(255, 152, 0, 0.9);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .fruit-circle {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 12px;
+      }
+      .fruit-circle img {
+        width: 100px;
+        height: 100px;
+      }
+      .section-title {
+        font-size: 1em;
+        padding: 8px 0;
+        margin-bottom: 8px;
+      }
+      .rules-box {
+        padding: 16px;
+        margin-top: 12px;
+        font-size: 1em;
+      }
+      .fruits-title {
+        font-size: 1em;
+        padding: 6px 0;
+        margin-bottom: 8px;
+      }
+      .chara.container {
+        gap: 8px;
+      }
+      .chara.container .col-6 {
+        padding: 10px 12px;
+        font-size: 1em;
+        min-height: 40px;
+        width: 100%;
+        max-width: none;
+        box-sizing: border-box;
+      }
+      .chara.container .col-6 img {
+        width: 30px;
+        height: 30px;
+        margin-right: 12px;
+      }
+    }
     
-    <!-- Canonical and Hreflang -->
-    <link rel="canonical" href="https://suikagame.netlify.app/it.html">
-    <link rel="alternate" href="https://suikagame.netlify.app/" hreflang="en">
-    <link rel="alternate" href="https://suikagame.netlify.app/zh.html" hreflang="zh">
-    <link rel="alternate" href="https://suikagame.netlify.app/es.html" hreflang="es">
-    <link rel="alternate" href="https://suikagame.netlify.app/fr.html" hreflang="fr">
-    <link rel="alternate" href="https://suikagame.netlify.app/de.html" hreflang="de">
-    <link rel="alternate" href="https://suikagame.netlify.app/ar.html" hreflang="ar">
-    <link rel="alternate" href="https://suikagame.netlify.app/ja.html" hreflang="ja">
-    <link rel="alternate" href="https://suikagame.netlify.app/ru.html" hreflang="ru">
-    <link rel="alternate" href="https://suikagame.netlify.app/pt.html" hreflang="pt">
-    <link rel="alternate" href="https://suikagame.netlify.app/it.html" hreflang="it">
-    <link rel="alternate" href="https://suikagame.netlify.app/ko.html" hreflang="ko">
-    <link rel="alternate" href="https://suikagame.netlify.app/pl.html" hreflang="pl">
-    <link rel="alternate" href="https://suikagame.netlify.app/sv.html" hreflang="sv">
-    <link rel="alternate" href="https://suikagame.netlify.app/fi.html" hreflang="fi">
-    <link rel="alternate" href="https://suikagame.netlify.app/no.html" hreflang="no">
+    @media (max-width: 768px) {
+      .container { 
+        padding: 12px 4px; 
+        gap: 12px; 
+      }
+      .main { 
+        width: 98vw; 
+        min-height: 450px;
+      }
+      .game-iframe {
+        width: 100%;
+        height: 83vh;
+        min-height: 580px;
+        max-height: 700px;
+        border: 1px solid #ff9800;
+      }
+      .side-left, .side-fruits { 
+        width: 98vw; 
+        padding: 0 4px;
+      }
+      .fruit-circle {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 8px;
+      }
+      .fruit-circle img {
+        width: 80px;
+        height: 80px;
+      }
+      .section-title {
+        font-size: 0.9em;
+        padding: 6px 0;
+        margin-bottom: 6px;
+      }
+      .rules-box {
+        padding: 12px;
+        margin-top: 8px;
+        font-size: 0.9em;
+        line-height: 1.4;
+      }
+      .fruits-title {
+        font-size: 0.9em;
+        padding: 5px 0;
+        margin-bottom: 6px;
+      }
+      .chara.container {
+        gap: 6px;
+      }
+      .chara.container .col-6 {
+        padding: 8px 10px;
+        font-size: 0.9em;
+        min-height: 36px;
+      }
+      .chara.container .col-6 img {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+      }
+      .details-section { 
+        padding: 12px; 
+        margin-top: 8px;
+      }
+      .details-section h2 {
+        font-size: 1.2em !important;
+        margin-bottom: 16px !important;
+      }
+      .details-section h3 {
+        font-size: 1em !important;
+        margin-bottom: 12px !important;
+      }
+      .details-section p {
+        font-size: 0.9em !important;
+        line-height: 1.5 !important;
+        margin-bottom: 12px !important;
+      }
+      .language-selector {
+        position: fixed;
+        top: 8px;
+        left: 8px;
+        z-index: 1001;
+      }
+      .language-btn {
+        padding: 4px 8px;
+        font-size: 11px;
+        background: rgba(255, 152, 0, 0.9);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .language-menu {
+        right: auto;
+        left: 0;
+        min-width: 180px;
+      }
+      
+      /* 在移动端为游戏区域添加顶部边距，避免与语言按钮重叠 */
+      .container {
+        padding: 50px 4px 12px 4px;
+      }
+    }
     
-    <!-- Regional variants -->
-    <link rel="alternate" href="https://suikagame.netlify.app/it.html" hreflang="it-IT">
-    <link rel="alternate" href="https://suikagame.netlify.app/it.html" hreflang="it-CH">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="img/watermelon.png" type="image/png">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #333;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        h1 {
-            font-size: 2.5em;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            margin-bottom: 10px;
-        }
-        
-        .subtitle {
-            font-size: 1.2em;
-            color: #f0f0f0;
-            margin-bottom: 20px;
-        }
-        
-        .language-selector {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-        }
-        
-        .language-dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .language-btn {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border: none;
-            padding: 10px 15px;
-            border-radius: 25px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 14px;
-            font-weight: 500;
-            color: #333;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .language-btn:hover {
-            background: rgba(255, 255, 255, 0.95);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-        }
-        
-        .language-dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            min-width: 200px;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-            z-index: 1001;
-            margin-top: 5px;
-            max-height: 300px;
-            overflow-y: auto;
-        }
-        
-        .language-dropdown:hover .language-dropdown-content {
-            display: block;
-        }
-        
-        .language-option {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px 16px;
-            text-decoration: none;
-            color: #333;
-            transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        }
-        
-        .language-option:last-child {
-            border-bottom: none;
-        }
-        
-        .language-option:hover {
-            background: rgba(103, 126, 234, 0.1);
-            transform: translateX(5px);
-        }
-        
-        .language-option.current {
-            background: rgba(103, 126, 234, 0.2);
-            font-weight: 600;
-        }
-        
-        .flag-icon {
-            width: 24px;
-            height: 18px;
-            border-radius: 3px;
-            background-size: cover;
-            background-position: center;
-            flex-shrink: 0;
-        }
-        
-        .flag-it { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjE4IiBmaWxsPSIjMDA2NmZmIi8+CjxyZWN0IHg9IjE2IiB3aWR0aD0iOCIgaGVpZ2h0PSIxOCIgZmlsbD0iI2ZmMDAwMCIvPgo8L3N2Zz4K'); }
-        
-        .game-container {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            margin-bottom: 30px;
-        }
-        
-        .game-iframe {
-            border: 4px solid #ff9800;
-            width: 100%;
-            height: 600px;
-            border-radius: 16px;
-            background: #fff;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-            box-sizing: border-box;
-            display: block;
-        }
-        
-        .game-frame {
-            width: 100%;
-            height: 600px;
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .fruits-showcase {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-            gap: 15px;
-            margin: 30px 0;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            backdrop-filter: blur(5px);
-        }
-        
-        .fruit-item {
-            text-align: center;
-            padding: 10px;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-            background: rgba(255, 255, 255, 0.5);
-        }
-        
-        .fruit-item:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.8);
-        }
-        
-        .fruit-item img {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
-            margin-bottom: 5px;
-        }
-        
-        .fruit-name {
-            font-size: 0.9em;
-            font-weight: 500;
-            color: #555;
-        }
-        
-        .rules {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            margin-bottom: 30px;
-        }
-        
-        .rules h2 {
-            color: #333;
-            margin-bottom: 20px;
-            font-size: 1.8em;
-        }
-        
-        .rules ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .rules li {
-            margin-bottom: 15px;
-            padding-left: 30px;
-            position: relative;
-            line-height: 1.6;
-        }
-        
-        .rules li:before {
-            content: "🍎";
-            position: absolute;
-            left: 0;
-            font-size: 1.2em;
-        }
-        
-        .tips {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .tips h2 {
-            color: #333;
-            margin-bottom: 20px;
-            font-size: 1.8em;
-        }
-        
-        .tips ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .tips li {
-            margin-bottom: 15px;
-            padding-left: 30px;
-            position: relative;
-            line-height: 1.6;
-        }
-        
-        .tips li:before {
-            content: "💡";
-            position: absolute;
-            left: 0;
-            font-size: 1.2em;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-            }
-            
-            h1 {
-                font-size: 2em;
-            }
-            
-            .subtitle {
-                font-size: 1em;
-            }
-            
-            .game-container,
-            .rules,
-            .tips {
-                padding: 20px;
-            }
-            
-            .game-iframe {
-                height: 500px;
-            }
-            
-            .fruits-showcase {
-                grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-                gap: 10px;
-                padding: 15px;
-            }
-            
-            .fruit-item img {
-                width: 40px;
-                height: 40px;
-            }
-            
-            .fruit-name {
-                font-size: 0.8em;
-            }
-            
-            .language-selector {
-                position: static;
-                margin-bottom: 20px;
-                text-align: center;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .game-iframe {
-                height: 400px;
-            }
-            
-            .fruits-showcase {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-    </style>
+    /* 小屏手机优化 - 简化版本 */
+    @media (max-width: 480px) {
+      .game-iframe {
+        height: 82vh;
+        min-height: 580px;
+        max-height: 700px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="language-selector">
-        <div class="language-dropdown">
-            <button class="language-btn">
-                <span class="flag-icon flag-it"></span>
-                <span>Italiano</span>
-                <span>▼</span>
-            </button>
-            <div class="language-dropdown-content">
-                <a href="/" class="language-option">
-                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSI2IiBmaWxsPSIjZmYwMDAwIi8+CjxyZWN0IHk9IjEyIiB3aWR0aD0iMjQiIGhlaWdodD0iNiIgZmlsbD0iI2ZmMDAwMCIvPgo8L3N2Zz4K')"></span>
-                    <span>English</span>
-                </a>
-                <a href="/zh.html" class="language-option">
-                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmYwMDAwIi8+CjxwYXRoIGQ9Ik0yIDJMMTAgMTBNMTAgMkwyIDEwIiBzdHJva2U9IiNmZmZmMDAiIHN0cm9rZS13aWR0aD0iMiIvPgo8L3N2Zz4K')"></span>
-                    <span>中文</span>
-                </a>
-                <a href="/es.html" class="language-option">
-                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSI2IiBmaWxsPSIjZmYwMDAwIi8+CjxyZWN0IHk9IjEyIiB3aWR0aD0iMjQiIGhlaWdodD0iNiIgZmlsbD0iI2ZmMDAwMCIvPgo8L3N2Zz4K')"></span>
-                    <span>Español</span>
-                </a>
-                <a href="/fr.html" class="language-option">
-                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjE4IiBmaWxsPSIjMDA2NmZmIi8+CjxyZWN0IHg9IjE2IiB3aWR0aD0iOCIgaGVpZ2h0PSIxOCIgZmlsbD0iI2ZmMDAwMCIvPgo8L3N2Zz4K')"></span>
-                    <span>Français</span>
-                </a>
-                <a href="/de.html" class="language-option">
-                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSI2IiBmaWxsPSIjMDAwIi8+CjxyZWN0IHk9IjEyIiB3aWR0aD0iMjQiIGhlaWdodD0iNiIgZmlsbD0iI2ZmMDAwMCIvPgo8L3N2Zz4K')"></span>
-                    <span>Deutsch</span>
-                </a>
-                <a href="/ar.html" class="language-option">
-                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSI2IiBmaWxsPSIjZmYwMDAwIi8+CjxyZWN0IHk9IjEyIiB3aWR0aD0iMjQiIGhlaWdodD0iNiIgZmlsbD0iIzAwMCIvPgo8L3N2Zz4K')"></span>
-                    <span>العربية</span>
-                </a>
-                <a href="/ja.html" class="language-option">
-                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iOSIgcj0iNCIgZmlsbD0iI2ZmMDAwMCIvPgo8L3N2Zz4K')"></span>
-                    <span>日本語</span>
-                </a>
-                <a href="/ru.html" class="language-option">
-                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSI2IiBmaWxsPSIjMDA2NmZmIi8+CjxyZWN0IHk9IjEyIiB3aWR0aD0iMjQiIGhlaWdodD0iNiIgZmlsbD0iI2ZmMDAwMCIvPgo8L3N2Zz4K')"></span>
-                    <span>Русский</span>
-                </a>
-                <a href="/pt.html" class="language-option">
-                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSI5IiBoZWlnaHQ9IjE4IiBmaWxsPSIjMDA2NjAwIi8+CjxyZWN0IHg9IjkiIHdpZHRoPSIxNSIgaGVpZ2h0PSIxOCIgZmlsbD0iI2ZmMDAwMCIvPgo8L3N2Zz4K')"></span>
-                    <span>Português</span>
-                </a>
-                <a href="/it.html" class="language-option current">
-                    <span class="flag-icon flag-it"></span>
-                    <span>Italiano</span>
-                </a>
-                <a href="/ko.html" class="language-option">
-                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iOSIgcj0iNCIgZmlsbD0iI2ZmMDAwMCIvPgo8L3N2Zz4K')"></span>
-                    <span>한국어</span>
-                </a>
-                <a href="/pl.html" class="language-option">
-                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHk9IjkiIHdpZHRoPSIyNCIgaGVpZ2h0PSI5IiBmaWxsPSIjZmYwMDAwIi8+CjwvdGV4dD4KPC9zdmc+')"></span>
-                    <span>Polski</span>
-                </a>
-                <a href="/sv.html" class="language-option">
-                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjMDA2NmZmIi8+CjxyZWN0IHg9IjgiIHdpZHRoPSI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmZjAwIi8+CjxyZWN0IHk9IjciIHdpZHRoPSIyNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmZjAwIi8+CjwvdGV4dD4KPC9zdmc+')"></span>
-                    <span>Svenska</span>
-                </a>
-                <a href="/fi.html" class="language-option">
-                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHg9IjgiIHdpZHRoPSI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjMDA2NmZmIi8+CjxyZWN0IHk9IjciIHdpZHRoPSIyNCIgaGVpZ2h0PSI0IiBmaWxsPSIjMDA2NmZmIi8+CjwvdGV4dD4KPC9zdmc+')"></span>
-                    <span>Suomi</span>
-                </a>
-                <a href="/no.html" class="language-option">
-                    <span class="flag-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmYwMDAwIi8+CjxyZWN0IHg9IjgiIHdpZHRoPSI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHk9IjciIHdpZHRoPSIyNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIi8+CjwvdGV4dD4KPC9zdmc+')"></span>
-                    <span>Norsk</span>
-                </a>
-            </div>
-        </div>
+  <div class="language-selector">
+    <button class="language-btn" onclick="toggleLanguageMenu()">
+      🌐 Lingua
+    </button>
+    <div class="language-menu" id="languageMenu">
+      <a href="index.html" class="lang-option">🇺🇸 English</a>
+      <a href="zh.html" class="lang-option">🇨🇳 中文</a>
+      <a href="es.html" class="lang-option">🇪🇸 Español</a>
+      <a href="fr.html" class="lang-option">🇫🇷 Français</a>
+      <a href="de.html" class="lang-option">🇩🇪 Deutsch</a>
+      <a href="ja.html" class="lang-option">🇯🇵 日本語</a>
+      <a href="ar.html" class="lang-option">🇸🇦 العربية</a>
+      <a href="ru.html" class="lang-option">🇷🇺 Русский</a>
+      <a href="pt.html" class="lang-option">🇵🇹 Português</a>
+      <a href="it.html" class="lang-option">🇮🇹 Italiano</a>
+      <a href="ko.html" class="lang-option">🇰🇷 한국어</a>
+      <a href="pl.html" class="lang-option">🇵🇱 Polski</a>
+      <a href="sv.html" class="lang-option">🇸🇪 Svenska</a>
+      <a href="fi.html" class="lang-option">🇫🇮 Suomi</a>
+      <a href="no.html" class="lang-option">🇳🇴 Norsk</a>
     </div>
+  </div>
+  
+  <script>
+    // 语言选择器相关功能
+    function toggleLanguageMenu() {
+      const menu = document.getElementById('languageMenu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
     
-    <div class="container">
-        <header>
-            <h1>🍉 Gioco Suika</h1>
-            <p class="subtitle">Gioco di Puzzle della Frutta in Stile Tetris - Combina la Frutta per Creare l'Anguria!</p>
-        </header>
-        
-        <div class="game-container">
-            <iframe class="game-iframe" src="https://suikagame.io/game/suika-game/" allowfullscreen frameborder="0" scrolling="no"></iframe>
+    // 点击外部关闭菜单
+    document.addEventListener('click', function(event) {
+      const selector = document.querySelector('.language-selector');
+      if (!selector.contains(event.target)) {
+        document.getElementById('languageMenu').style.display = 'none';
+      }
+    });
+    
+    // 自动语言检测功能
+    function detectAndRedirectLanguage() {
+      const userLanguageChoice = localStorage.getItem('userLanguageChoice');
+      
+      if (userLanguageChoice) {
+        return;
+      }
+      
+      const userLang = navigator.language || navigator.languages[0] || 'en';
+      
+      // 语言映射
+      const languageMap = {
+        'zh': 'zh.html',
+        'zh-cn': 'zh.html',
+        'zh-tw': 'zh.html',
+        'zh-hk': 'zh.html',
+        'es': 'es.html',
+        'es-es': 'es.html',
+        'es-mx': 'es.html',
+        'fr': 'fr.html',
+        'fr-fr': 'fr.html',
+        'fr-ca': 'fr.html',
+        'de': 'de.html',
+        'de-de': 'de.html',
+        'ja': 'ja.html',
+        'ja-jp': 'ja.html',
+        'ar': 'ar.html',
+        'ar-sa': 'ar.html'
+      };
+      
+      const detectedLang = userLang.toLowerCase();
+      const targetPage = languageMap[detectedLang] || languageMap[detectedLang.split('-')[0]];
+      
+      if (targetPage) {
+        window.location.href = targetPage;
+      }
+    }
+    
+    // 记录用户的语言选择
+    function recordLanguageChoice() {
+      localStorage.setItem('userLanguageChoice', 'it');
+    }
+    
+    // 页面加载时执行语言检测
+    document.addEventListener('DOMContentLoaded', detectAndRedirectLanguage);
+    
+    // 为语言选项添加点击事件
+    document.querySelectorAll('.lang-option').forEach(option => {
+      option.addEventListener('click', function() {
+        const href = this.getAttribute('href');
+        if (href !== 'language-selector.html') {
+          const langCode = href.replace('.html', '').replace('index', 'en');
+          localStorage.setItem('userLanguageChoice', langCode);
+        }
+      });
+    });
+    
+    // 添加重置语言选择的功能
+    function resetLanguageChoice() {
+      localStorage.removeItem('userLanguageChoice');
+      console.log('Language preference reset');
+    }
+    
+    window.resetLanguageChoice = resetLanguageChoice;
+    
+    // 简单的高度优化
+    function ensureProperHeight() {
+      console.log('页面加载完成，确保游戏区域有足够高度');
+    }
+    
+    window.addEventListener('load', ensureProperHeight);
+  </script>
+  <div class="container">
+    <div class="main-wrapper">
+      <div class="side-left">
+        <div class="section-title">Regole del Gioco</div>
+        <div class="fruit-circle">
+          <img src="img/seicho.png" alt="Evoluzione della Frutta" />
         </div>
-        
-        <div class="fruits-showcase">
-            <div class="fruit-item">
-                <img src="img/cherry.png" alt="Ciliegia">
-                <div class="fruit-name">Ciliegia</div>
-            </div>
-            <div class="fruit-item">
-                <img src="img/strawberry.png" alt="Fragola">
-                <div class="fruit-name">Fragola</div>
-            </div>
-            <div class="fruit-item">
-                <img src="img/grapes.png" alt="Uva">
-                <div class="fruit-name">Uva</div>
-            </div>
-            <div class="fruit-item">
-                <img src="img/dekopon.png" alt="Mandarino">
-                <div class="fruit-name">Mandarino</div>
-            </div>
-            <div class="fruit-item">
-                <img src="img/orange.png" alt="Arancia">
-                <div class="fruit-name">Arancia</div>
-            </div>
-            <div class="fruit-item">
-                <img src="img/apple.png" alt="Mela">
-                <div class="fruit-name">Mela</div>
-            </div>
-            <div class="fruit-item">
-                <img src="img/pear.png" alt="Pera">
-                <div class="fruit-name">Pera</div>
-            </div>
-            <div class="fruit-item">
-                <img src="img/peach.png" alt="Pesca">
-                <div class="fruit-name">Pesca</div>
-            </div>
-            <div class="fruit-item">
-                <img src="img/pineapple.png" alt="Ananas">
-                <div class="fruit-name">Ananas</div>
-            </div>
-            <div class="fruit-item">
-                <img src="img/melon.png" alt="Melone">
-                <div class="fruit-name">Melone</div>
-            </div>
-            <div class="fruit-item">
-                <img src="img/watermelon.png" alt="Anguria">
-                <div class="fruit-name">Anguria</div>
-            </div>
-        </div>
-        
-        <div class="rules">
-            <h2>📋 Come Giocare</h2>
-            <ul>
-                <li>Rilascia la frutta nella scatola e fai toccare due frutti uguali</li>
-                <li>Quando due frutti dello stesso tipo si toccano, si combinano in un frutto più grande</li>
-                <li>Continua a combinare fino a creare l'anguria finale</li>
-                <li>Il gioco finisce quando la frutta trabocca dalla scatola</li>
-                <li>Cerca di ottenere il punteggio più alto possibile!</li>
-            </ul>
-        </div>
-        
-        <div class="tips">
-            <h2>🎯 Suggerimenti Strategici</h2>
-            <ul>
-                <li>Pianifica le tue mosse in anticipo</li>
-                <li>Mantieni i frutti più grandi sul fondo della scatola</li>
-                <li>Crea combo a catena per punteggi più alti</li>
-                <li>Usa i bordi della scatola per posizionare i frutti più piccoli</li>
-                <li>Non avere fretta - pensa prima di rilasciare ogni frutto</li>
-            </ul>
-        </div>
+              <div class="rules-box">
+        Regole Semplici:<br>
+        Rilascia la frutta per combinarla<br>
+        Crea frutti più grandi per ottenere più punti!
+      </div>
+      </div>
+      <div class="main">
+        <iframe class="game-iframe" src="https://suikagame.io/game/suika-game/" allowfullscreen frameborder="0" scrolling="no"></iframe>
+      </div>
+      <div class="side-fruits">
+        <h2 class="fruits-title">Frutta</h2>
+        <ul class="chara container">
+          <li class="col-6">
+            <img src="img/cherry.png"><span>Ciliegia</span>
+          </li>
+          <li class="col-6">
+            <img src="img/strawberry.png"><span>Fragola</span>
+          </li>
+          <li class="col-6">
+            <img src="img/grapes.png"><span>Uva</span>
+          </li>
+          <li class="col-6">
+            <img src="img/dekopon.png"><span>Mandarino</span>
+          </li>
+          <li class="col-6">
+            <img src="img/orange.png"><span>Arancia</span>
+          </li>
+          <li class="col-6">
+            <img src="img/apple.png"><span>Mela</span>
+          </li>
+          <li class="col-6">
+            <img src="img/pear.png"><span>Pera</span>
+          </li>
+          <li class="col-6">
+            <img src="img/peach.png"><span>Pesca</span>
+          </li>
+          <li class="col-6">
+            <img src="img/pineapple.png"><span>Ananas</span>
+          </li>
+          <li class="col-6">
+            <img src="img/melon.png"><span>Melone</span>
+          </li>
+          <li class="col-6">
+            <img src="img/watermelon.png"><span>Anguria</span>
+          </li>
+        </ul>
+      </div>
     </div>
-    
-    <script>
-        // Auto-detect language based on browser preferences
-        function detectLanguage() {
-            const userLang = navigator.language || navigator.userLanguage;
-            const supportedLanguages = {
-                'it': 'it.html',
-                'it-IT': 'it.html',
-                'it-CH': 'it.html',
-                'pt': 'pt.html',
-                'es': 'es.html',
-                'fr': 'fr.html',
-                'de': 'de.html',
-                'ar': 'ar.html',
-                'ja': 'ja.html',
-                'ru': 'ru.html',
-                'ko': 'ko.html',
-                'pl': 'pl.html',
-                'sv': 'sv.html',
-                'fi': 'fi.html',
-                'no': 'no.html',
-                'zh': 'zh.html',
-                'zh-CN': 'zh.html',
-                'zh-TW': 'zh.html'
-            };
-            
-            // Check for exact match first
-            if (supportedLanguages[userLang]) {
-                return supportedLanguages[userLang];
-            }
-            
-            // Check for language code only (e.g., 'it' from 'it-IT')
-            const langCode = userLang.split('-')[0];
-            if (supportedLanguages[langCode]) {
-                return supportedLanguages[langCode];
-            }
-            
-            return 'index.html'; // Default to English
-        }
-        
-        // Check if user has been redirected or has preference
-        const hasLanguagePreference = localStorage.getItem('suika-language-preference');
-        const currentPage = window.location.pathname;
-        
-        if (!hasLanguagePreference && currentPage === '/') {
-            const detectedLanguage = detectLanguage();
-            if (detectedLanguage !== 'index.html') {
-                localStorage.setItem('suika-language-preference', detectedLanguage);
-                window.location.href = detectedLanguage;
-            }
-        }
-        
-        // Save language preference when user manually selects a language
-        document.querySelectorAll('.language-option').forEach(option => {
-            option.addEventListener('click', function() {
-                const href = this.getAttribute('href');
-                const langFile = href === '/' ? 'index.html' : href.substring(1);
-                localStorage.setItem('suika-language-preference', langFile);
-            });
-        });
-    </script>
+    <div class="details-section">
+      <h2 style="color: #8b4513; margin-bottom: 24px; text-align: center; font-size: 1.5em;">Come Giocare al Gioco Suika</h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start;">
+        <div>
+          <h3 style="color: #8b4513; margin-bottom: 16px;">Regole del Gioco</h3>
+          <p style="color: #654321; line-height: 1.6; margin-bottom: 16px;">
+            Le regole del Gioco Suika sono molto semplici! Devi creare un frutto più grande combinando due piccoli frutti uguali come le mele.
+          </p>
+          <p style="color: #654321; line-height: 1.6; margin-bottom: 16px;">
+            Quando due frutti dello stesso tipo si toccano, si fondono in un frutto più grande. L'obiettivo è creare il frutto più grande possibile - l'anguria!
+          </p>
+        </div>
+        <div>
+          <h3 style="color: #8b4513; margin-bottom: 16px;">Sistema di Punteggio</h3>
+          <p style="color: #654321; line-height: 1.6; margin-bottom: 16px;">
+            Ogni frutto ha un valore in punti diverso. Più grande è il frutto, più punti guadagni quando lo crei.
+          </p>
+          <p style="color: #654321; line-height: 1.6; margin-bottom: 16px;">
+            Prova a creare reazioni a catena combinando più frutti contemporaneamente per massimizzare il tuo punteggio!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html> 
