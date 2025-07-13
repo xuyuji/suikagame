@@ -1,530 +1,727 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>수박 게임 - 테트리스 스타일 과일 퍼즐 게임 | 온라인 플레이</title>
-    <meta name="description" content="유명한 수박 게임을 온라인에서 무료로 플레이하세요! 과일을 결합하여 수박을 만드는 최고의 테트리스 스타일 퍼즐 게임. 중독성 있고 재미있어요!">
-    <meta name="keywords" content="수박게임, 수박 게임, 과일 퍼즐, 테트리스 과일, 온라인 게임, 무료 게임, 한국 게임">
-    <meta name="author" content="Suika Game">
-    <meta name="robots" content="index, follow">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>수박 게임 - 무료 온라인 과일 병합 게임</title>
+  <meta name="description" content="중독성 있는 수박 게임을 온라인에서 무료로 플레이하세요! 과일을 떨어뜨려 병합하여 가장 큰 수박을 만드세요. 재미있는 물리학 기반 퍼즐 게임입니다.">
+  <meta name="keywords" content="수박게임, 수박 게임, 과일 병합 게임, 퍼즐 게임, 온라인 게임, 무료 게임, 떨어뜨리기 게임, 물리학 게임, 캐주얼 게임">
+  <meta name="author" content="Suika Game">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#ff9800">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://suikagame.netlify.app/ko.html">
+  
+  <!-- Language alternates -->
+  <link rel="alternate" hreflang="en" href="https://suikagame.netlify.app/">
+  <link rel="alternate" hreflang="zh-CN" href="https://suikagame.netlify.app/zh.html">
+  <link rel="alternate" hreflang="es" href="https://suikagame.netlify.app/es.html">
+  <link rel="alternate" hreflang="fr" href="https://suikagame.netlify.app/fr.html">
+  <link rel="alternate" hreflang="de" href="https://suikagame.netlify.app/de.html">
+  <link rel="alternate" hreflang="ja" href="https://suikagame.netlify.app/ja.html">
+  <link rel="alternate" hreflang="ar" href="https://suikagame.netlify.app/ar.html">
+  <link rel="alternate" hreflang="ru" href="https://suikagame.netlify.app/ru.html">
+  <link rel="alternate" hreflang="pt" href="https://suikagame.netlify.app/pt.html">
+  <link rel="alternate" hreflang="it" href="https://suikagame.netlify.app/it.html">
+  <link rel="alternate" hreflang="ko" href="https://suikagame.netlify.app/ko.html">
+  <link rel="alternate" hreflang="pl" href="https://suikagame.netlify.app/pl.html">
+  <link rel="alternate" hreflang="sv" href="https://suikagame.netlify.app/sv.html">
+  <link rel="alternate" hreflang="fi" href="https://suikagame.netlify.app/fi.html">
+  <link rel="alternate" hreflang="no" href="https://suikagame.netlify.app/no.html">
+  <link rel="alternate" hreflang="x-default" href="https://suikagame.netlify.app/">
+  
+  <!-- Open Graph tags for social sharing -->
+  <meta property="og:title" content="수박 게임 - 무료 온라인 과일 병합 게임">
+  <meta property="og:description" content="중독성 있는 수박 게임을 온라인에서 무료로 플레이하세요! 과일을 떨어뜨려 병합하여 가장 큰 수박을 만드세요. 재미있는 물리학 기반 퍼즐 게임입니다.">
+  <meta property="og:image" content="https://suikagame.netlify.app/img/watermelon.png">
+  <meta property="og:url" content="https://suikagame.netlify.app/ko.html">
+  <meta property="og:type" content="game">
+  <meta property="og:site_name" content="Suika Game">
+  <meta property="og:locale" content="ko_KR">
+  
+  <!-- Twitter Card tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="수박 게임 - 무료 온라인 과일 병합 게임">
+  <meta name="twitter:description" content="중독성 있는 수박 게임을 온라인에서 무료로 플레이하세요! 과일을 떨어뜨려 병합하여 가장 큰 수박을 만드세요.">
+  <meta name="twitter:image" content="https://suikagame.netlify.app/img/watermelon.png">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/watermelon.png">
+  <link rel="apple-touch-icon" href="img/watermelon.png">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Game",
+    "name": "수박 게임",
+    "description": "중독성 있는 수박 게임을 온라인에서 무료로 플레이하세요! 과일을 떨어뜨려 병합하여 가장 큰 수박을 만드세요. 재미있는 물리학 기반 퍼즐 게임입니다.",
+    "url": "https://suikagame.netlify.app/ko.html",
+    "image": "https://suikagame.netlify.app/img/watermelon.png",
+    "genre": "퍼즐 게임",
+    "gameItem": "브라우저 게임",
+    "operatingSystem": "Any",
+    "applicationCategory": "게임",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "KRW"
+    }
+  }
+  </script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffd6ad;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 100vh;
+      width: 100vw;
+      box-sizing: border-box;
+      background: #ffd6ad;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      padding: 24px;
+      overflow: hidden;
+      gap: 32px;
+    }
+    .language-selector {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1001;
+    }
+    .language-btn {
+      background: #ff9800;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: none;
+      font-weight: bold;
+      font-size: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .language-btn:hover {
+      background: #e67e22;
+      transform: translateY(-2px);
+    }
+    .language-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      margin-top: 8px;
+      min-width: 200px;
+      max-height: 400px;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    .lang-option {
+      display: block;
+      padding: 12px 16px;
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .lang-option:hover {
+      background: #f8f9fa;
+      color: #ff9800;
+    }
+    .lang-option:last-child {
+      border-bottom: none;
+    }
+    .more-lang {
+      font-weight: bold;
+      color: #ff9800;
+    }
+    .main-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      height: 700px;
+      box-sizing: border-box;
+      gap: 32px;
+      max-width: 1200px;
+      width: 100%;
+      position: relative;
+    }
+    .details-section {
+      background: #f0c794;
+      border-radius: 16px;
+      padding: 32px;
+      max-width: 1200px;
+      width: 100%;
+      box-sizing: border-box;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .side-left {
+      width: 320px;
+      padding: 0 16px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 700px;
+      overflow-y: visible;
+      justify-content: flex-start;
+    }
+    .fruit-circle {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      position: relative;
+      margin-bottom: 16px;
+      background: #ffe0b2;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .fruit-circle img {
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+      border-radius: 50%;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      background: #fff;
+    }
+    .section-title {
+      background: #ff9800;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.2em;
+      border-radius: 10px;
+      padding: 10px 0;
+      width: 90%;
+      text-align: center;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 0 #e07b00;
+    }
+    .rules-box {
+      background: #fff3e0;
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      text-align: center;
+      font-size: 1.1em;
+      color: #333;
+    }
+    .main {
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      margin: 0;
+      width: 428px;
+      height: 708px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      box-shadow: none;
+      position: relative;
+      overflow: visible;
+    }
+    .game-iframe {
+      border: 4px solid #ff9800;
+      width: 420px;
+      height: 700px;
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      box-sizing: border-box;
+      display: block;
+    }
+    .side-fruits {
+      width: 180px;
+      background: none;
+      box-sizing: border-box;
+      display: block;
+      padding: 0;
+      margin: 0;
+      height: auto;
+      max-height: 700px;
+      overflow: hidden;
+      position: relative;
+    }
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://suikagame.netlify.app/ko.html">
-    <meta property="og:title" content="수박 게임 - 테트리스 스타일 과일 퍼즐 게임">
-    <meta property="og:description" content="유명한 수박 게임을 온라인에서 무료로 플레이하세요! 과일을 결합하여 수박을 만드세요.">
-    <meta property="og:image" content="https://suikagame.netlify.app/img/watermelon.png">
+    /* 确保水果列表在移动端不会产生滚动 */
+    .side-fruits::-webkit-scrollbar {
+      display: none;
+    }
     
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://suikagame.netlify.app/ko.html">
-    <meta property="twitter:title" content="수박 게임 - 테트리스 스타일 과일 퍼즐 게임">
-    <meta property="twitter:description" content="유명한 수박 게임을 온라인에서 무료로 플레이하세요! 과일을 결합하여 수박을 만드세요.">
-    <meta property="twitter:image" content="https://suikagame.netlify.app/img/watermelon.png">
+    .side-fruits {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .fruits-title {
+      background: #ff9800;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.1em;
+      border-radius: 10px;
+      padding: 8px 0;
+      width: 100%;
+      text-align: center;
+      margin: 0 0 12px 0;
+      box-shadow: 0 2px 0 #e07b00;
+      letter-spacing: 0.5px;
+    }
+    .chara.container {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 3px;
+    }
+    .chara.container .col-6 {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 10px;
+      padding: 8px 12px;
+      margin-bottom: 0;
+      font-size: 0.9em;
+      font-weight: 500;
+      color: #8b6f47;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      min-height: 36px;
+      border-bottom: none;
+      width: auto;
+      min-width: 130px;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    .chara.container .col-6 img {
+      width: 26px;
+      height: 26px;
+      margin-right: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .chara.container .col-6 span {
+      vertical-align: middle;
+      display: inline-block;
+    }
+    @media (max-width: 1100px) {
+      .container { 
+        padding: 50px 8px 16px 8px; 
+        gap: 16px; 
+      }
+      .main-wrapper { 
+        flex-direction: column; 
+        align-items: center; 
+        height: auto; 
+        max-height: none; 
+        gap: 16px; 
+      }
+      .side-left { 
+        width: 95vw; 
+        height: auto; 
+        overflow-y: visible;
+        order: 2;
+        padding: 0 8px;
+      }
+      .side-fruits { 
+        width: 95vw; 
+        height: auto; 
+        max-height: none;
+        overflow: visible;
+        order: 3;
+        padding: 0 8px;
+      }
+      .main { 
+        width: 95vw; 
+        height: auto;
+        min-height: 500px;
+        order: 1;
+      }
+      .game-iframe {
+        width: 100%;
+        height: 88vh;
+        min-height: 630px;
+        max-height: 750px;
+        border: 2px solid #ff9800;
+      }
+      .details-section { 
+        padding: 16px; 
+        order: 4;
+      }
+      .details-section > div { 
+        grid-template-columns: 1fr; 
+        gap: 16px; 
+      }
+      .language-switch {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        padding: 6px 12px;
+        font-size: 12px;
+        z-index: 1001;
+        background: rgba(255, 152, 0, 0.9);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .fruit-circle {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 12px;
+      }
+      .fruit-circle img {
+        width: 100px;
+        height: 100px;
+      }
+      .section-title {
+        font-size: 1em;
+        padding: 8px 0;
+        margin-bottom: 8px;
+      }
+      .rules-box {
+        padding: 16px;
+        margin-top: 12px;
+        font-size: 1em;
+      }
+      .fruits-title {
+        font-size: 1em;
+        padding: 6px 0;
+        margin-bottom: 8px;
+      }
+      .chara.container {
+        gap: 8px;
+      }
+      .chara.container .col-6 {
+        padding: 10px 12px;
+        font-size: 1em;
+        min-height: 40px;
+        width: 100%;
+        max-width: none;
+        box-sizing: border-box;
+      }
+      .chara.container .col-6 img {
+        width: 30px;
+        height: 30px;
+        margin-right: 12px;
+      }
+    }
     
-    <!-- Canonical and Hreflang -->
-    <link rel="canonical" href="https://suikagame.netlify.app/ko.html">
-    <link rel="alternate" href="https://suikagame.netlify.app/" hreflang="en">
-    <link rel="alternate" href="https://suikagame.netlify.app/zh.html" hreflang="zh">
-    <link rel="alternate" href="https://suikagame.netlify.app/es.html" hreflang="es">
-    <link rel="alternate" href="https://suikagame.netlify.app/fr.html" hreflang="fr">
-    <link rel="alternate" href="https://suikagame.netlify.app/de.html" hreflang="de">
-    <link rel="alternate" href="https://suikagame.netlify.app/ar.html" hreflang="ar">
-    <link rel="alternate" href="https://suikagame.netlify.app/ja.html" hreflang="ja">
-    <link rel="alternate" href="https://suikagame.netlify.app/ru.html" hreflang="ru">
-    <link rel="alternate" href="https://suikagame.netlify.app/pt.html" hreflang="pt">
-    <link rel="alternate" href="https://suikagame.netlify.app/it.html" hreflang="it">
-    <link rel="alternate" href="https://suikagame.netlify.app/ko.html" hreflang="ko">
-    <link rel="alternate" href="https://suikagame.netlify.app/pl.html" hreflang="pl">
-    <link rel="alternate" href="https://suikagame.netlify.app/sv.html" hreflang="sv">
-    <link rel="alternate" href="https://suikagame.netlify.app/fi.html" hreflang="fi">
-    <link rel="alternate" href="https://suikagame.netlify.app/no.html" hreflang="no">
+    @media (max-width: 768px) {
+      .container { 
+        padding: 12px 4px; 
+        gap: 12px; 
+      }
+      .main { 
+        width: 98vw; 
+        min-height: 450px;
+      }
+      .game-iframe {
+        width: 100%;
+        height: 83vh;
+        min-height: 580px;
+        max-height: 700px;
+        border: 1px solid #ff9800;
+      }
+      .side-left, .side-fruits { 
+        width: 98vw; 
+        padding: 0 4px;
+      }
+      .fruit-circle {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 8px;
+      }
+      .fruit-circle img {
+        width: 80px;
+        height: 80px;
+      }
+      .section-title {
+        font-size: 0.9em;
+        padding: 6px 0;
+        margin-bottom: 6px;
+      }
+      .rules-box {
+        padding: 12px;
+        margin-top: 8px;
+        font-size: 0.9em;
+        line-height: 1.4;
+      }
+      .fruits-title {
+        font-size: 0.9em;
+        padding: 5px 0;
+        margin-bottom: 6px;
+      }
+      .chara.container {
+        gap: 6px;
+      }
+      .chara.container .col-6 {
+        padding: 8px 10px;
+        font-size: 0.9em;
+        min-height: 36px;
+      }
+      .chara.container .col-6 img {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+      }
+      .details-section { 
+        padding: 12px; 
+        margin-top: 8px;
+      }
+      .details-section h2 {
+        font-size: 1.2em !important;
+        margin-bottom: 16px !important;
+      }
+      .details-section h3 {
+        font-size: 1em !important;
+        margin-bottom: 12px !important;
+      }
+      .details-section p {
+        font-size: 0.9em !important;
+        line-height: 1.5 !important;
+        margin-bottom: 12px !important;
+      }
+      .language-selector {
+        position: fixed;
+        top: 8px;
+        left: 8px;
+        z-index: 1001;
+      }
+      .language-btn {
+        padding: 4px 8px;
+        font-size: 11px;
+        background: rgba(255, 152, 0, 0.9);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .language-menu {
+        right: auto;
+        left: 0;
+        min-width: 180px;
+      }
+      
+      /* 在移动端为游戏区域添加顶部边距，避免与语言按钮重叠 */
+      .container {
+        padding: 50px 4px 12px 4px;
+      }
+    }
     
-    <!-- Regional variants -->
-    <link rel="alternate" href="https://suikagame.netlify.app/ko.html" hreflang="ko-KR">
-    <link rel="alternate" href="https://suikagame.netlify.app/ko.html" hreflang="ko-KP">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="img/watermelon.png" type="image/png">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #333;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        h1 {
-            font-size: 2.5em;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            margin-bottom: 10px;
-        }
-        
-        .subtitle {
-            font-size: 1.2em;
-            color: #f0f0f0;
-            margin-bottom: 20px;
-        }
-        
-        .language-selector {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-        }
-        
-        .language-dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .language-btn {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border: none;
-            padding: 10px 15px;
-            border-radius: 25px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 14px;
-            font-weight: 500;
-            color: #333;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .language-btn:hover {
-            background: rgba(255, 255, 255, 0.95);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-        }
-        
-        .language-dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            min-width: 200px;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-            z-index: 1001;
-            margin-top: 5px;
-            max-height: 300px;
-            overflow-y: auto;
-        }
-        
-        .language-dropdown:hover .language-dropdown-content {
-            display: block;
-        }
-        
-        .language-option {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px 16px;
-            text-decoration: none;
-            color: #333;
-            transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        }
-        
-        .language-option:last-child {
-            border-bottom: none;
-        }
-        
-        .language-option:hover {
-            background: rgba(103, 126, 234, 0.1);
-            transform: translateX(5px);
-        }
-        
-        .language-option.current {
-            background: rgba(103, 126, 234, 0.2);
-            font-weight: 600;
-        }
-        
-        .flag-icon {
-            width: 24px;
-            height: 18px;
-            border-radius: 3px;
-            background-size: cover;
-            background-position: center;
-            flex-shrink: 0;
-        }
-        
-        .flag-ko { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE4IiBmaWxsPSIjZmZmIi8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iOSIgcj0iNCIgZmlsbD0iI2ZmMDAwMCIvPgo8cGF0aCBkPSJNMTIgOUwxNCA3TDE0IDExWiIgZmlsbD0iIzAwNjZmZiIvPgo8L3N2Zz4K'); }
-        
-        .game-container {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            margin-bottom: 30px;
-        }
-        
-        .game-iframe {
-            border: 4px solid #ff9800;
-            width: 100%;
-            height: 600px;
-            border-radius: 16px;
-            background: #fff;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-            box-sizing: border-box;
-            display: block;
-        }
-        
-        .fruits-showcase {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-            gap: 15px;
-            margin: 30px 0;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            backdrop-filter: blur(5px);
-        }
-        
-        .fruit-item {
-            text-align: center;
-            padding: 10px;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-            background: rgba(255, 255, 255, 0.5);
-        }
-        
-        .fruit-item:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.8);
-        }
-        
-        .fruit-item img {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
-            margin-bottom: 5px;
-        }
-        
-        .fruit-name {
-            font-size: 0.9em;
-            font-weight: 500;
-            color: #555;
-        }
-        
-        .rules {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            margin-bottom: 30px;
-        }
-        
-        .rules h2 {
-            color: #333;
-            margin-bottom: 20px;
-            font-size: 1.8em;
-        }
-        
-        .rules ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .rules li {
-            margin-bottom: 15px;
-            padding-left: 30px;
-            position: relative;
-            line-height: 1.6;
-        }
-        
-        .rules li:before {
-            content: "🍎";
-            position: absolute;
-            left: 0;
-            font-size: 1.2em;
-        }
-        
-        .tips {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .tips h2 {
-            color: #333;
-            margin-bottom: 20px;
-            font-size: 1.8em;
-        }
-        
-        .tips ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .tips li {
-            margin-bottom: 15px;
-            padding-left: 30px;
-            position: relative;
-            line-height: 1.6;
-        }
-        
-        .tips li:before {
-            content: "💡";
-            position: absolute;
-            left: 0;
-            font-size: 1.2em;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-            }
-            
-            h1 {
-                font-size: 2em;
-            }
-            
-            .subtitle {
-                font-size: 1em;
-            }
-            
-            .game-container,
-            .rules,
-            .tips {
-                padding: 20px;
-            }
-            
-            .game-iframe {
-                height: 500px;
-            }
-            
-            .fruits-showcase {
-                grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-                gap: 10px;
-                padding: 15px;
-            }
-            
-            .fruit-item img {
-                width: 40px;
-                height: 40px;
-            }
-            
-            .fruit-name {
-                font-size: 0.8em;
-            }
-            
-            .language-selector {
-                position: static;
-                margin-bottom: 20px;
-                text-align: center;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .game-iframe {
-                height: 400px;
-            }
-            
-            .fruits-showcase {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-    </style>
+    /* 小屏手机优化 - 简化版本 */
+    @media (max-width: 480px) {
+      .game-iframe {
+        height: 82vh;
+        min-height: 580px;
+        max-height: 700px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="language-selector">
-        <button class="language-btn" onclick="toggleLanguageMenu()">
-            🌐 언어
-        </button>
-        <div class="language-menu" id="languageMenu">
-            <a href="index.html" class="lang-option">🇺🇸 English</a>
-            <a href="zh.html" class="lang-option">🇨🇳 中文</a>
-            <a href="es.html" class="lang-option">🇪🇸 Español</a>
-            <a href="fr.html" class="lang-option">🇫🇷 Français</a>
-            <a href="de.html" class="lang-option">🇩🇪 Deutsch</a>
-            <a href="ja.html" class="lang-option">🇯🇵 日本語</a>
-            <a href="ar.html" class="lang-option">🇸🇦 العربية</a>
-            <a href="ru.html" class="lang-option">🇷🇺 Русский</a>
-            <a href="pt.html" class="lang-option">🇵🇹 Português</a>
-            <a href="it.html" class="lang-option">🇮🇹 Italiano</a>
-            <a href="ko.html" class="lang-option">🇰🇷 한국어</a>
-            <a href="pl.html" class="lang-option">🇵🇱 Polski</a>
-            <a href="sv.html" class="lang-option">🇸🇪 Svenska</a>
-            <a href="fi.html" class="lang-option">🇫🇮 Suomi</a>
-            <a href="no.html" class="lang-option">🇳🇴 Norsk</a>
-        </div>
+  <div class="language-selector">
+    <button class="language-btn" onclick="toggleLanguageMenu()">
+      🌐 언어
+    </button>
+    <div class="language-menu" id="languageMenu">
+      <a href="index.html" class="lang-option">🇺🇸 English</a>
+      <a href="zh.html" class="lang-option">🇨🇳 中文</a>
+      <a href="es.html" class="lang-option">🇪🇸 Español</a>
+      <a href="fr.html" class="lang-option">🇫🇷 Français</a>
+      <a href="de.html" class="lang-option">🇩🇪 Deutsch</a>
+      <a href="ja.html" class="lang-option">🇯🇵 日本語</a>
+      <a href="ar.html" class="lang-option">🇸🇦 العربية</a>
+      <a href="ru.html" class="lang-option">🇷🇺 Русский</a>
+      <a href="pt.html" class="lang-option">🇵🇹 Português</a>
+      <a href="it.html" class="lang-option">🇮🇹 Italiano</a>
+      <a href="ko.html" class="lang-option">🇰🇷 한국어</a>
+      <a href="pl.html" class="lang-option">🇵🇱 Polski</a>
+      <a href="sv.html" class="lang-option">🇸🇪 Svenska</a>
+      <a href="fi.html" class="lang-option">🇫🇮 Suomi</a>
+      <a href="no.html" class="lang-option">🇳🇴 Norsk</a>
     </div>
+  </div>
+  
+  <script>
+    // 语言选择器相关功能
+    function toggleLanguageMenu() {
+      const menu = document.getElementById('languageMenu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
     
-    <div class="container">
-        <header>
-            <h1>🍉 수박 게임</h1>
-            <p class="subtitle">테트리스 스타일 과일 퍼즐 게임 - 과일을 결합하여 수박을 만드세요!</p>
-        </header>
-        
-        <div class="game-container">
-            <iframe class="game-iframe" src="https://suikagame.io/game/suika-game/" allowfullscreen frameborder="0" scrolling="no"></iframe>
+    // 点击外部关闭菜单
+    document.addEventListener('click', function(event) {
+      const selector = document.querySelector('.language-selector');
+      if (!selector.contains(event.target)) {
+        document.getElementById('languageMenu').style.display = 'none';
+      }
+    });
+    
+    // 自动语言检测功能
+    function detectAndRedirectLanguage() {
+      const userLanguageChoice = localStorage.getItem('userLanguageChoice');
+      
+      if (userLanguageChoice) {
+        return;
+      }
+      
+      const userLang = navigator.language || navigator.languages[0] || 'en';
+      
+      // 语言映射
+      const languageMap = {
+        'zh': 'zh.html',
+        'zh-cn': 'zh.html',
+        'zh-tw': 'zh.html',
+        'zh-hk': 'zh.html',
+        'es': 'es.html',
+        'es-es': 'es.html',
+        'es-mx': 'es.html',
+        'fr': 'fr.html',
+        'fr-fr': 'fr.html',
+        'fr-ca': 'fr.html',
+        'de': 'de.html',
+        'de-de': 'de.html',
+        'ja': 'ja.html',
+        'ja-jp': 'ja.html',
+        'ar': 'ar.html',
+        'ar-sa': 'ar.html'
+      };
+      
+      const detectedLang = userLang.toLowerCase();
+      const targetPage = languageMap[detectedLang] || languageMap[detectedLang.split('-')[0]];
+      
+      if (targetPage) {
+        window.location.href = targetPage;
+      }
+    }
+    
+    // 记录用户的语言选择
+    function recordLanguageChoice() {
+      localStorage.setItem('userLanguageChoice', 'ko');
+    }
+    
+    // 页面加载时执行语言检测
+    document.addEventListener('DOMContentLoaded', detectAndRedirectLanguage);
+    
+    // 为语言选项添加点击事件
+    document.querySelectorAll('.lang-option').forEach(option => {
+      option.addEventListener('click', function() {
+        const href = this.getAttribute('href');
+        if (href !== 'language-selector.html') {
+          const langCode = href.replace('.html', '').replace('index', 'en');
+          localStorage.setItem('userLanguageChoice', langCode);
+        }
+      });
+    });
+    
+    // 添加重置语言选择的功能
+    function resetLanguageChoice() {
+      localStorage.removeItem('userLanguageChoice');
+      console.log('Language preference reset');
+    }
+    
+    window.resetLanguageChoice = resetLanguageChoice;
+    
+    // 简单的高度优化
+    function ensureProperHeight() {
+      console.log('페이지 로드 완료, 게임 영역 높이 확보');
+    }
+    
+    window.addEventListener('load', ensureProperHeight);
+  </script>
+  <div class="container">
+    <div class="main-wrapper">
+      <div class="side-left">
+        <div class="section-title">게임 규칙</div>
+        <div class="fruit-circle">
+          <img src="img/seicho.png" alt="과일 진화 서클" />
         </div>
-        
-        <div class="fruits-showcase">
-            <div class="fruit-item">
-                <img src="img/cherry.png" alt="체리">
-                <div class="fruit-name">체리</div>
-            </div>
-            <div class="fruit-item">
-                <img src="img/strawberry.png" alt="딸기">
-                <div class="fruit-name">딸기</div>
-            </div>
-            <div class="fruit-item">
-                <img src="img/grapes.png" alt="포도">
-                <div class="fruit-name">포도</div>
-            </div>
-            <div class="fruit-item">
-                <img src="img/dekopon.png" alt="귤">
-                <div class="fruit-name">귤</div>
-            </div>
-            <div class="fruit-item">
-                <img src="img/orange.png" alt="오렌지">
-                <div class="fruit-name">오렌지</div>
-            </div>
-            <div class="fruit-item">
-                <img src="img/apple.png" alt="사과">
-                <div class="fruit-name">사과</div>
-            </div>
-            <div class="fruit-item">
-                <img src="img/pear.png" alt="배">
-                <div class="fruit-name">배</div>
-            </div>
-            <div class="fruit-item">
-                <img src="img/peach.png" alt="복숭아">
-                <div class="fruit-name">복숭아</div>
-            </div>
-            <div class="fruit-item">
-                <img src="img/pineapple.png" alt="파인애플">
-                <div class="fruit-name">파인애플</div>
-            </div>
-            <div class="fruit-item">
-                <img src="img/melon.png" alt="멜론">
-                <div class="fruit-name">멜론</div>
-            </div>
-            <div class="fruit-item">
-                <img src="img/watermelon.png" alt="수박">
-                <div class="fruit-name">수박</div>
-            </div>
-        </div>
-        
-        <div class="rules">
-            <h2>📋 게임 방법</h2>
-            <ul>
-                <li>박스에 과일을 떨어뜨리고 같은 과일끼리 닿게 하세요</li>
-                <li>같은 종류의 과일 두 개가 닿으면 더 큰 과일로 합쳐집니다</li>
-                <li>계속 합쳐서 최종 목표인 수박을 만드세요</li>
-                <li>과일이 박스에서 넘치면 게임이 끝납니다</li>
-                <li>가능한 높은 점수를 얻어보세요!</li>
-            </ul>
-        </div>
-        
-        <div class="tips">
-            <h2>🎯 전략 팁</h2>
-            <ul>
-                <li>미리 수를 계획하고 플레이하세요</li>
-                <li>큰 과일들을 박스 아래쪽에 유지하세요</li>
-                <li>연쇄 콤보를 만들어 높은 점수를 얻으세요</li>
-                <li>박스 가장자리를 활용해 작은 과일들을 배치하세요</li>
-                <li>서두르지 말고 각 과일을 떨어뜨리기 전에 생각하세요</li>
-            </ul>
-        </div>
+              <div class="rules-box">
+        간단한 규칙:<br>
+        과일을 떨어뜨려 조합하세요<br>
+        더 큰 과일로 더 많은 점수를!
+      </div>
+      </div>
+      <div class="main">
+        <iframe class="game-iframe" src="https://suikagame.io/game/suika-game/" allowfullscreen frameborder="0" scrolling="no"></iframe>
+      </div>
+      <div class="side-fruits">
+        <h2 class="fruits-title">과일</h2>
+        <ul class="chara container">
+          <li class="col-6">
+            <img src="img/cherry.png"><span>체리</span>
+          </li>
+          <li class="col-6">
+            <img src="img/strawberry.png"><span>딸기</span>
+          </li>
+          <li class="col-6">
+            <img src="img/grapes.png"><span>포도</span>
+          </li>
+          <li class="col-6">
+            <img src="img/dekopon.png"><span>데코폰</span>
+          </li>
+          <li class="col-6">
+            <img src="img/orange.png"><span>오렌지</span>
+          </li>
+          <li class="col-6">
+            <img src="img/apple.png"><span>사과</span>
+          </li>
+          <li class="col-6">
+            <img src="img/pear.png"><span>배</span>
+          </li>
+          <li class="col-6">
+            <img src="img/peach.png"><span>복숭아</span>
+          </li>
+          <li class="col-6">
+            <img src="img/pineapple.png"><span>파인애플</span>
+          </li>
+          <li class="col-6">
+            <img src="img/melon.png"><span>멜론</span>
+          </li>
+          <li class="col-6">
+            <img src="img/watermelon.png"><span>수박</span>
+          </li>
+        </ul>
+      </div>
     </div>
-    
-    <script>
-        // 语言选择器相关功能
-        function toggleLanguageMenu() {
-            const menu = document.getElementById('languageMenu');
-            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-        }
-        
-        // 点击外部关闭菜单
-        document.addEventListener('click', function(event) {
-            const selector = document.querySelector('.language-selector');
-            if (!selector.contains(event.target)) {
-                document.getElementById('languageMenu').style.display = 'none';
-            }
-        });
-        
-        // 语言检测和重定向
-        function detectAndRedirectLanguage() {
-            const userLanguageChoice = localStorage.getItem('userLanguageChoice');
-            
-            if (userLanguageChoice) {
-                return;
-            }
-            
-            const userLang = navigator.language || navigator.languages[0] || 'en';
-            
-            const koreanLanguages = ['ko', 'ko-KR', 'ko-KP'];
-            const isKoreanLanguage = koreanLanguages.some(lang => 
-                userLang.toLowerCase().startsWith(lang.toLowerCase())
-            );
-            
-            if (isKoreanLanguage && window.location.pathname.indexOf('ko.html') === -1) {
-                window.location.href = 'ko.html';
-            }
-        }
-        
-        function recordLanguageChoice() {
-            localStorage.setItem('userLanguageChoice', 'ko');
-        }
-        
-        document.addEventListener('DOMContentLoaded', detectAndRedirectLanguage);
-        
-        // 为语言选项添加点击事件
-        document.querySelectorAll('.lang-option').forEach(option => {
-            option.addEventListener('click', function() {
-                const href = this.getAttribute('href');
-                const langCode = href.replace('.html', '').replace('index', 'en');
-                localStorage.setItem('userLanguageChoice', langCode);
-            });
-        });
-        
-        function resetLanguageChoice() {
-            localStorage.removeItem('userLanguageChoice');
-            console.log('언어 설정이 재설정되었습니다');
-        }
-        
-        window.resetLanguageChoice = resetLanguageChoice;
-        
-        function ensureProperHeight() {
-            console.log('페이지가 완전히 로드되었습니다. 게임 영역의 적절한 높이를 확보합니다');
-        }
-        
-        window.addEventListener('load', ensureProperHeight);
-    </script>
+    <div class="details-section">
+      <h2 style="color: #8b4513; margin-bottom: 24px; text-align: center; font-size: 1.5em;">수박 게임 플레이 방법</h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start;">
+        <div>
+          <h3 style="color: #8b4513; margin-bottom: 16px;">게임 규칙</h3>
+          <p style="color: #654321; line-height: 1.6; margin-bottom: 16px;">
+            수박 게임의 규칙은 매우 간단합니다! 사과와 같은 두 개의 같은 작은 과일을 조합하여 더 큰 과일을 만들어야 합니다.
+          </p>
+          <p style="color: #654321; line-height: 1.6; margin-bottom: 16px;">
+            같은 종류의 두 과일이 서로 닿으면 더 큰 과일로 합쳐집니다. 목표는 가능한 한 가장 큰 과일인 수박을 만드는 것입니다!
+          </p>
+        </div>
+        <div>
+          <h3 style="color: #8b4513; margin-bottom: 16px;">점수 시스템</h3>
+          <p style="color: #654321; line-height: 1.6; margin-bottom: 16px;">
+            각 과일마다 다른 점수가 있습니다. 과일이 클수록 만들었을 때 더 많은 점수를 얻습니다.
+          </p>
+          <p style="color: #654321; line-height: 1.6; margin-bottom: 16px;">
+            한 번에 여러 과일을 조합하여 연쇄 반응을 만들어 점수를 극대화해 보세요!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html> 
